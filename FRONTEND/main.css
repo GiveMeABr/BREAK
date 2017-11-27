@@ -1,128 +1,117 @@
 @charset "UTF-8";/* CSS Document */
-
 body {
-	background-color: #1A1A1A;
-	color: #FFF;
-	width: 100%;
-	margin: 0px;
+    background-color: #1A1A1A;
+    color: #FFF;
+    width: 100%;
+    margin: 0px;
 }
 p {
-	font-family: "lato", sans-serif;
-	font-size: 1em;
+    font-family: "lato", sans-serif;
+    font-size: 1em;
 }
-
 .nav_bar {
-	display: fixed;
-	top: 0;
+	width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }
-
 nav {
-	background-color: #222222;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px 40px;
-}
-
-nav .logo {
-	max-width: 15%;
-	min-width: 110px;
-}
-
-nav .fa {
-	font-size: 1.7em;
-	padding: 0px 20px
-}
-
-.articles {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	margin-bottom: 20px;
-}
-
-article {
-	background-color: #222222;
-	border-radius: 10px;
-	margin-top: 20px;
+    background-color: #222222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	max-width: 900px;
 
+}
+nav .logo {
+    max-width: 15%;
+    min-width: 110px;
+}
+nav .fa {
+    font-size: 1.7em;
+    padding: 0px 20px
+}
+.articles {
+    margin-top: 9%; /* Add a top margin to avoid content overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+article {
+    background-color: #222222;
+    border-radius: 10px;
+    margin: 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 900px;
 }
 article h1 {
-	font-family: "futura-pt", sans-serif;
-	font-size: 1em;
-	padding: 5px;
+    font-family: "futura-pt", sans-serif;
+    font-size: 1em;
+    padding: 5px;
 }
 article h2 {
-	font-family: "futura-pt", sans-serif;
-	font-size: 1em;
-	color: #666666;
-	margin: 10px 15px 0px 0px;
+    font-family: "futura-pt", sans-serif;
+    font-size: 1em;
+    color: #666666;
+    margin: 10px 15px 0px 0px;
 }
-
 .article_top {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
 }
-
 .article_top header {
-	display: flex;
-	align-items: center;
-	padding: 7px 7px 0px 7px;
+    display: flex;
+    align-items: center;
+    padding: 7px 7px 0px 7px;
 }
-
-.article_top img {	
-	height: 37px;
-	width: 37px;
-	border-radius: 50%;
+.article_top img {
+    height: 37px;
+    width: 37px;
+    border-radius: 50%;
 }
-
 .article_top .profile_border {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 45px;
-	width: 45px;
-	min-height: 45px;
-	min-width: 45px;
-	border: 2px transparent;
-	border-radius: 50%;
-	background-image: linear-gradient(#222222, #222222), radial-gradient(circle at top left, #7f00ff, #e100ff);
-	background-clip: content-box, border-box;
-	padding: 3px;
-	margin: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    min-height: 45px;
+    min-width: 45px;
+    border: 2px transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(#222222, #222222), radial-gradient(circle at top left, #7f00ff, #e100ff);
+    background-clip: content-box, border-box;
+    padding: 3px;
+    margin: 10px 10px;
 }
-
-.post_media{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.post_media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 .post {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 10px 25px 10px 25px;
-	max-width: 97%;
-	font-family: "roboto-mono", monospace;
-	font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 25px 10px 25px;
+    max-width: 97%;
+    font-family: "roboto-mono", monospace;
+    font-size: 1.3em;
 }
-
 .buttons {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
 .buttons img {
-	max-width: 100px;
-	margin: 0px 5% 0px 5%;
-	height: 50%;
-	width: 13%;
+    max-width: 100px;
+    margin: 0px 5% 0px 5%;
+    height: 50%;
+    width: 13%;
 }
-
