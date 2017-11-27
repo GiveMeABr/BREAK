@@ -1,21 +1,54 @@
-@charset "UTF-8";
-/* CSS Document */
+@charset "UTF-8";/* CSS Document */
 
 body {
 	background-color: #1A1A1A;
 	color: #FFF;
+	width: 100%;
+	margin: 0px;
 }
 p {
 	font-family: "lato", sans-serif;
 	font-size: 1em;
 }
 
+.nav_bar {
+	display: fixed;
+	top: 0;
+}
+
+nav {
+	background-color: #222222;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 40px;
+}
+
+nav .logo {
+	max-width: 15%;
+	min-width: 110px;
+}
+
+nav .fa {
+	font-size: 1.7em;
+	padding: 0px 20px
+}
+
+.articles {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
 article {
-	
 	background-color: #222222;
 	border-radius: 10px;
-	margin: 20px;
+	margin-top: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	max-width: 900px;
+
 }
 article h1 {
 	font-family: "futura-pt", sans-serif;
