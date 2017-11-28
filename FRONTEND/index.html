@@ -9,9 +9,8 @@
 </head>
 <body>
 <div class="nav_bar">
-  <nav id="primary"> <!-- Button to close the overlay navigation -->
-	  <a id="close_menu" href="javascript:void(0)" class="closebtn hidden" onClick="closeNav()"><em class="fa fa-times" aria-hidden="true"></em>
-</a> <a><em id="open_menu" class="fa fa-bars" aria-hidden="true" onClick="openNav()"></em></a> <img src="icons/logo_white.png" class="logo"> <em class="fa fa-plus" aria-hidden="true"></em> </nav>
+  <nav id="primary"> <!-- Button to close the overlay navigation --> 
+    <a id="close_menu" href="javascript:void(0)" class="closebtn hidden" onClick="closeNav()"><em class="fa fa-times" aria-hidden="true"></em> </a> <a><em id="open_menu" class="fa fa-bars" aria-hidden="true" onClick="openNav()"></em></a> <img src="icons/logo_white.png" class="logo"> <em class="fa fa-plus" aria-hidden="true"></em> </nav>
   <nav id="tabs">
     <button class="tab active" id="hot_tab">
     <h1>HOT</h1>
@@ -27,7 +26,7 @@
   <article>
     <div class="article_top">
       <header>
-        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile_article"> </div>
+        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
         <h1> Lorem Ipsum dolor sit amet </h1>
       </header>
       <h2> +1337 </h2>
@@ -40,7 +39,7 @@
   <article>
     <div class="article_top">
       <header>
-        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile_article"> </div>
+        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
         <h1> Lorem Ipsum dolor sit amet </h1>
       </header>
       <h2> +1337 </h2>
@@ -48,23 +47,31 @@
     <div class="post_media">
       <p class="post">Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare #quam</p>
     </div>
-    
     <div class="buttons"> <img src="icons/upvote.png"> <img src="icons/downvote.png"> <img src="icons/like.png"> <img src="icons/comment.png"> </div>
   </article>
 </main>
 
-	<!-- The overlay -->
-<div id="myNav" class="overlay">
+<!-- The overlay -->
+<div id="myNav" class="overlay"> 
   <!-- Overlay content -->
   <div class="overlay-content">
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <form>
+		<i class="fa fa-search" aria-hidden="true"></i>
+      <input class="search_field" type="search" placeholder="">
+    </form>
+    <ul class="search_results">
+		
+	  <!-- Search user element -->
+		<li class="search_user"><a href="#"><div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div><p>LoreMonica01</p></a></li>
+		
+	  <!-- Search tag element --> 
+      <li class="search_tag"><a href="#">LoremIpsum</a></li>
+
+    </ul>
   </div>
 </div>
 
-<!-- Use any element to open/show the overlay navigation menu -->
+<!-- Use any element to open/show the overlay navigation menu --> 
 <script type="text/javascript" src="js/tab.js"></script>
 </body>
 </html>
