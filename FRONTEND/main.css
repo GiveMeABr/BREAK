@@ -9,32 +9,74 @@ p {
     font-family: "lato", sans-serif;
     font-size: 1em;
 }
+
+h1{
+	font-family: "futura-pt", sans-serif;
+}
+
 .nav_bar {
 	width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
-nav {
+
+#primary {
+	height: 60px;
     background-color: #222222;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 40px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+    padding: 0px 30px;
 }
-nav .logo {
-    max-width: 15%;
+
+#tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tab {
+	border: none;
+	background-color: #222222;
+	border-radius: 0;
+	color: #666666;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	z-index: -2;
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.active {
+	color: #fff;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	z-index: -1;
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.tab h1 {
+	margin: 6px;
+}
+
+#primary .logo {
+    max-width: 10%;
     min-width: 110px;
 }
-nav .fa {
+#primary .fa {
     font-size: 1.7em;
     padding: 0px 20px
 }
 .articles {
-    margin-top: 9%; /* Add a top margin to avoid content overlay */
+    margin-top: 90px; /* Add a top margin to avoid content overlay */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +91,6 @@ article {
     max-width: 900px;
 }
 article h1 {
-    font-family: "futura-pt", sans-serif;
     font-size: 1em;
     padding: 5px;
 }
@@ -114,4 +155,64 @@ article h2 {
     margin: 0px 5% 0px 5%;
     height: 50%;
     width: 13%;
+}
+
+/* The Overlay (background) */
+.overlay {
+    margin-top: 90px; /* Add a top margin to avoid content overlay */ 
+    height: 0;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: #1A1A1A;
+    overflow-y: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }

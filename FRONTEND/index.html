@@ -8,12 +8,22 @@
 <script src="https://use.fontawesome.com/73da11679b.js"></script>
 </head>
 <body>
-	<div class="nav_bar">
-<nav> <em class="fa fa-bars" aria-hidden="true"></em> <img src="icons/logo_white.png" class="logo"> <em class="fa fa-plus" aria-hidden="true"></em> </nav>
-	</div>
-<div class="articles"> 
+<div class="nav_bar">
+  <nav id="primary"> <!-- Button to close the overlay navigation -->
+	  <a id="close_menu" href="javascript:void(0)" class="closebtn hidden" onClick="closeNav()"><em class="fa fa-times" aria-hidden="true"></em>
+</a> <a><em id="open_menu" class="fa fa-bars" aria-hidden="true" onClick="openNav()"></em></a> <img src="icons/logo_white.png" class="logo"> <em class="fa fa-plus" aria-hidden="true"></em> </nav>
+  <nav id="tabs">
+    <button class="tab active" id="hot_tab">
+    <h1>HOT</h1>
+    </button>
+    <button class="tab" id="fresh_tab">
+    <h1>FRESH</h1>
+    </button>
+  </nav>
+</div>
+<main class="articles"> 
   
-  <!--- MEDIA ARTICLE --->
+  <!-- MEDIA ARTICLE -->
   <article>
     <div class="article_top">
       <header>
@@ -26,7 +36,7 @@
     <div class="buttons"> <img src="icons/upvote.png"> <img src="icons/downvote.png"> <img src="icons/like.png"> <img src="icons/comment.png"> </div>
   </article>
   
-  <!--- TEXT ARTICLE --->
+  <!-- TEXT ARTICLE -->
   <article>
     <div class="article_top">
       <header>
@@ -38,8 +48,23 @@
     <div class="post_media">
       <p class="post">Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare #quam</p>
     </div>
+    
     <div class="buttons"> <img src="icons/upvote.png"> <img src="icons/downvote.png"> <img src="icons/like.png"> <img src="icons/comment.png"> </div>
   </article>
+</main>
+
+	<!-- The overlay -->
+<div id="myNav" class="overlay">
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
 </div>
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<script type="text/javascript" src="js/tab.js"></script>
 </body>
 </html>
