@@ -6,36 +6,51 @@ const hotTab = document.querySelector('#hot_tab');
 const freshTab = document.querySelector('#fresh_tab');
 
 // Create eventListeners
-hotTab.addEventListener('click', (evt) => {
+function changeTab() {
 	'use strict';
-	if (hotTab.classList.contains('active')) {} else {
-		hotTab.classList.toggle('active');
+	hotTab.classList.toggle('active');
+	freshTab.classList.toggle('active');
 	}
-});
-
-freshTab.addEventListener('click', (evt) => {
-	'use strict';
-	if (freshTab.classList.contains('active')) {} else {
-		freshTab.classList.toggle('active');
-	}
-});
-
 
 const openMenu = document.querySelector('#open_menu');
 const closeMenu = document.querySelector('#close_menu');
+const openUpload = document.querySelector('#open_upload');
+const closeUpload = document.querySelector('#close_upload');
 
-/* Open */
 function openNav() {
 	'use strict';
     document.getElementById("myNav").style.height = "100%";
-	closeMenu.classList.toggle('hidden');
-	openMenu.classList.toggle('hidden');
+	
+	// test
+	openUpload.classList.toggle('visibility_hidden');
+	
+	closeMenu.classList.toggle('display_none');
+	openMenu.classList.toggle('display_none');
 }
 
-/* Close */
 function closeNav() {
 	'use strict';
     document.getElementById("myNav").style.height = "0%";
-	closeMenu.classList.toggle('hidden');
-	openMenu.classList.toggle('hidden');
+	openUpload.classList.toggle('visibility_hidden');
+	closeMenu.classList.toggle('display_none');
+	openMenu.classList.toggle('display_none');
 }
+
+/*
+function openUpload() {
+	'use strict';
+    document.getElementById("upload").style.height = "100%";
+	openMenu.classList.toggle('hidden');
+	openUpload.classList.toggle('hidden');
+	closeUpload.classList.toggle('hidden');
+}
+
+
+function closeUpload() {
+	'use strict';
+    document.getElementById("upload").style.height = "0%";
+	openMenu.classList.toggle('hidden');
+	openUpload.classList.toggle('hidden');
+	closeUpload.classList.toggle('hidden');
+}
+*/

@@ -10,14 +10,14 @@
 <body>
 <div class="nav_bar">
   <nav id="primary"> <!-- Button to close the overlay navigation --> 
-    <a id="close_menu" href="javascript:void(0)" class="closebtn hidden" onClick="closeNav()"><em class="fa fa-times" aria-hidden="true"></em> </a> <a><em id="open_menu" class="fa fa-bars" aria-hidden="true" onClick="openNav()"></em></a> <img src="icons/logo_white.png" class="logo"> <em class="fa fa-plus" aria-hidden="true"></em> </nav>
+    <a id="close_menu" href="javascript:void(0)" class="closebtn display_none" onClick="closeNav()"><em class="fa fa-times" aria-hidden="true"></em> </a> <a><em id="open_menu" class="fa fa-bars" aria-hidden="true" onClick="openNav()"></em></a> <img src="icons/logo_white.png" class="logo"> <em id="open_upload" class="fa fa-plus" aria-hidden="true" onClick="openUpload()"></em><a id="close_upload" href="javascript:void(0)" class="closebtn display_none" onClick="closeUpload()"><em class="fa fa-times" aria-hidden="true"></em> </a> </nav>
   <nav id="tabs">
-    <button class="tab active" id="hot_tab">
+    <a class="tab active" id="hot_tab" onClick="changeTab()">
     <h1>HOT</h1>
-    </button>
-    <button class="tab" id="fresh_tab">
+    </a>
+    <a class="tab" id="fresh_tab" onClick="changeTab()">
     <h1>FRESH</h1>
-    </button>
+    </a>
   </nav>
 </div>
 <main class="articles"> 
@@ -51,14 +51,15 @@
   </article>
 </main>
 
-<!-- The overlay -->
+<!-- The Menu -->
 <div id="myNav" class="overlay"> 
-  <!-- Overlay content -->
+  <!-- Menu content -->
   <div class="overlay-content">
     <form>
 		<i class="fa fa-search" aria-hidden="true"></i>
       <input class="search_field" type="search" placeholder="">
     </form>
+	  
     <ul class="search_results">
 		
 	  <!-- Search user element -->
@@ -68,6 +69,30 @@
       <li class="search_user"><a href="#"><div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div><h2>LoreMonica01</h2></a></li>
 
     </ul>
+	  
+  </div>
+</div>
+	
+	
+	<!-- Upload -->
+<div id="upload" class="overlay"> 
+  <!-- Upload content -->
+  <div class="overlay-content">
+    <form>
+		<i class="fa fa-search" aria-hidden="true"></i>
+      <input class="search_field" type="search" placeholder="">
+    </form>
+	  
+    <ul class="search_results">
+		
+	  <!-- Search user element -->
+		<li class="search_user"><a href="#"><div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div><h2>LoreMonica01</h2></a></li>
+		
+	  <!-- Search tag element --> 
+      <li class="search_user"><a href="#"><div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div><h2>LoreMonica01</h2></a></li>
+
+    </ul>
+	  
   </div>
 </div>
 

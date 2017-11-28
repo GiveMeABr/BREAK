@@ -270,9 +270,15 @@ article h2 {
 	align-content: center;
 }
 
-.hidden {
+.display_none {
 	display: none !important;
 }
+
+.visibility_hidden {
+	visibility: hidden;
+}
+
+
 
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
