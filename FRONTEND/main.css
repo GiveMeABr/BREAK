@@ -15,6 +15,10 @@ h1{
 	font-family: "futura-pt", sans-serif;
 }
 
+h2 {
+	font-family: "futura-pt", sans-serif;
+}
+
 ul {
 	padding: 0px;
 	list-style: none;
@@ -189,7 +193,10 @@ article h2 {
 }
 
 /* The navigation links inside the overlay */
-.overlay a, .overlay p {
+.overlay a, .overlay h2 {
+	display: flex;
+	align-items: center;
+	font-family: "futura-pt", sans-serif;
 	vertical-align: middle;
     padding: 8px;
     text-decoration: none;
@@ -200,7 +207,7 @@ article h2 {
 }
 
 /* When you mouse over the navigation links, change their color */
-.overlay a:hover, .overlay p:hover {
+.overlay a:hover, .overlay h2:hover {
     color: #fff;
 }
 
