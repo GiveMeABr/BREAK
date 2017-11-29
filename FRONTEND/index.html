@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<meta name="theme-color" content="#1A1A1A">
+<title>BRAKE - Take a break</title>
 <link href="main.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://use.typekit.net/kxk4dlr.css">
 <script src="https://use.fontawesome.com/73da11679b.js"></script>
@@ -10,7 +11,7 @@
 <body>
 <div class="nav_bar">
   <nav id="primary">
-    <a id="close_menu" href="javascript:void(0)" class="closebtn display_none" onClick="closeNav()"><em class="fa fa-times" aria-hidden="true"></em></a> <a id="open_menu" onClick="openNav()"><em  class="fa fa-bars" aria-hidden="true"></em></a> <img src="icons/logo_white.png" class="logo"> <a id="open_upload" onClick="openUpload()"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="javascript:void(0)" class="closebtn display_none" onClick="closeUpload()"><em class="fa fa-times" aria-hidden="true"></em> </a> </nav>
+    <a id="close_menu" href="javascript:void(0)" class="closebtn display_none" onClick="closeNav()"><em class="fa fa-times" aria-hidden="true"></em></a> <a id="open_menu" onClick="openNav()"><em  class="fa fa-bars" aria-hidden="true"></em></a> <img src="icons/logo_white.png" class="logo"> <a id="open_upload" onClick="openUploadi()"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="javascript:void(0)" class="closebtn display_none" onClick="closeUploadi()"><em class="fa fa-times" aria-hidden="true"></em> </a> </nav>
   <nav id="tabs"> <a class="tab active" id="hot_tab" onClick="changeTab()">
     <h1>HOT</h1>
     </a> <a class="tab" id="fresh_tab" onClick="changeTab()">
@@ -28,9 +29,9 @@
       </header>
       <h2> +1337 </h2>
     </div>
-    <div class="post_media"> 
-		<img src="img/daniel-monteiro-313651.jpg" class="post">
-		<p class="post display_none"></p>
+    <div class="article_media"> 
+		<img src="img/daniel-monteiro-313651.jpg" class="article">
+		<p class="article display_none"></p>
 	  </div>
     <div class="buttons"> <img src="icons/upvote.png"> <img src="icons/downvote.png"> <img src="icons/like.png"> <img src="icons/comment.png"> </div>
   </article>
@@ -44,9 +45,9 @@
       </header>
       <h2> +1337 </h2>
     </div>
-    <div class="post_media">
-		<img class="post">
-      <p class="post">Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare #quam</p>
+    <div class="article_media">
+		<img class="article">
+      <p class="article">Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare #quam</p>
     </div>
     <div class="buttons"> <img src="icons/upvote.png"> <img src="icons/downvote.png"> <img src="icons/like.png"> <img src="icons/comment.png"> </div>
   </article>
@@ -58,7 +59,7 @@
   <div class="overlay-content">
     <form>
       <i class="fa fa-search" aria-hidden="true"></i>
-      <input class="search_field" type="search" placeholder="">
+      <input class="text_field" type="search" placeholder="">
     </form>
     <ul class="search_results">
       
@@ -81,11 +82,32 @@
 <div id="upload" class="overlay upload"> 
   <!-- Upload content -->
   <div class="overlay-content upload">
-<h1> MITÄ HELVETTIÄ <h1>
+<header id="upload_header">
+  <h1>UPLOAD</h1>
+  <p>Lorem Ipsum dolor sit amet</p>
+</header>
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Media')">Media</button>
+  <button class="tablinks" onclick="openTab(event, 'Text')">Text</button>
+</div>
+<div id="Media" class="tabcontent">
+  <h1>Media</h1>
+  <form class="article_upload">
+    <input type="file">
+    <input class="text_field" type="text">
+    <input class="text_field" type="text">
+  </form>
+</div>
+<div id="Text" class="tabcontent">
+  <h1>Text</h1>
+  <p>Paris is the capital of France.</p>
+</div>
   </div>
 </div>
 
 <!-- Use any element to open/show the overlay navigation menu --> 
-<script type="text/javascript" src="js/tab.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/upload_tab.js"></script>
+
 </body>
 </html>
