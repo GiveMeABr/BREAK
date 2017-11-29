@@ -38,16 +38,37 @@ CREATE TABLE Comment(
     CommentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE UserVotes(
+CREATE TABLE Votes(
     Voter INT NOT NULL,
     Article INT NOT NULL,
     VoteType BOOLEAN,
     FOREIGN KEY (Voter) REFERENCES User(UserID),
     FOREIGN KEY (Article) REFERENCES Article(ArticleID),
-    PRIMARY KEY (Upvoter, Article)
+    PRIMARY KEY (Voter, Article)
 );
 
-CREATE TABLE 
+CREATE TABLE TagMap(
+    Article INT,
+    Tag INT,
+    FOREIGN KEY (Article) REFERENCES Article(ArticleID),
+    FOREIGN KEY (Tag) REFERENCES Tag(TagID),
+);
+
+CREATE TABLE Favorites(
+    User INT,
+    Article INT,
+    FOREIGN KEY (User) REFERENCES User(UserID),
+    FOREIGN KEY (Article) REFERENCES Article(ArticleID),
+    PRIMARY KEY (User, Article)
+);
+
+CREATE TABLE Follows(
+    User INT,
+    Followed INT,
+    FOREIGN KEY (User) REFERENCES User(UserID),
+    FOREIGN KEY (User) REFERENCES User(UserID),
+    PRIMARY KEY (User, Followed)
+);
 
 INSERT INTO User(
     Username,
