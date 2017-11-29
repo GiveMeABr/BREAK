@@ -14,25 +14,23 @@ const changeTab = () => {
 	'use strict';
 	hotTab.classList.toggle('active');
 	freshTab.classList.toggle('active');
-}
-
+};
 
 const openNav = () => {
 	'use strict';
 	myNav.style.height = "100%";
-	// openUpload.classList.toggle('visibility_hidden');
+	openUpload.classList.toggle('visibility_hidden');
 	closeMenu.classList.toggle('display_none');
 	openMenu.classList.toggle('display_none');
-}
+};
 
 const closeNav = () => {
 	'use strict';
 	myNav.style.height = "0%";
-	// openUpload.classList.toggle('visibility_hidden');
+	openUpload.classList.toggle('visibility_hidden');
 	closeMenu.classList.toggle('display_none');
 	openMenu.classList.toggle('display_none');
-}
-
+};
 
 
 const openUploadi =()=> {
@@ -41,11 +39,7 @@ const openUploadi =()=> {
 	openMenu.classList.toggle('visibility_hidden');
 	openUpload.classList.toggle('display_none');
 	closeUpload.classList.toggle('display_none');
-}
-
-
-
-
+};
 
 const closeUploadi =()=> {
 	'use strict';
@@ -53,5 +47,5 @@ const closeUploadi =()=> {
 	openMenu.classList.toggle('visibility_hidden');
 	openUpload.classList.toggle('display_none');
 	closeUpload.classList.toggle('display_none');
-}
+};
 

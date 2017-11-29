@@ -206,10 +206,13 @@ article h2 {
 .overlay-content {
     position: flex;
 	justify-content: flex-start;
-	margin: 40px;
     top: 25%; /* 25% from the top */
     width: 100%; /* 100% width */
-    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    margin-top: 10px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.menu{
+    margin-top: 100px;
 }
 
 /* The navigation links inside the overlay */
@@ -255,9 +258,6 @@ article h2 {
 	align-items: center;
 }
 
-form{position:relative;}
-.tasksInput{margin-right:150px;}
-.submit-and-options{position:absolute; right:0; top:0;}
 
 .menu .profile {
     height: 37px;
