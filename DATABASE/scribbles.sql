@@ -15,6 +15,22 @@ CREATE TABLE Post(
     NSFW BOOLEAN DEFAULT NULL,
 );
 
+CREATE TABLE Tag(
+    TagID INT UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    Tag VARCHAR(50)
+);
+
+CREATE TABLE Comment(
+    Comment VARCHAR(160),
+    Commenter INT,
+    Post INT,
+    FOREIGN KEY (Commenter) REFERENCES User(UserID),
+    FOREIGN KEY (Post) REFERENCES Post(PostID),
+    CommentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE 
+
 INSERT INTO User(
     Username,
     Email,
