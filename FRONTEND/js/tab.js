@@ -53,4 +53,5 @@ function closeUpload() {
 	openUpload.classList.toggle('hidden');
 	closeUpload.classList.toggle('hidden');
 }
+
 */

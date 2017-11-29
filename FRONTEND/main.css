@@ -271,7 +271,7 @@ article h2 {
 }
 
 .display_none {
-	display: none !important;
+	display: none;
 }
 
 .visibility_hidden {
