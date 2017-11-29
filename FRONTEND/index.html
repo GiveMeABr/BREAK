@@ -9,16 +9,13 @@
 </head>
 <body>
 <div class="nav_bar">
-  <nav id="primary"> <!-- Button to close the overlay navigation --> 
-	  <a id="close_menu" href="javascript:void(0)" class="closebtn display_none" onClick="closeNav()"><em class="fa fa-times" aria-hidden="true"></em> </a> <a id="open_menu"><em  class="fa fa-bars" aria-hidden="true" onClick="openNav()"></em></a> <img src="icons/logo_white.png" class="logo"> <a><em id="open_upload" class="fa fa-plus" aria-hidden="true" onClick="openUpload()"></em></a><a id="close_upload" href="javascript:void(0)" class="closebtn display_none" onClick="closeUpload()"><em class="fa fa-times" aria-hidden="true"></em> </a> </nav>
-  <nav id="tabs">
-    <a class="tab active" id="hot_tab" onClick="changeTab()">
+  <nav id="primary">
+    <a id="close_menu" href="javascript:void(0)" class="closebtn display_none" onClick="closeNav()"><em class="fa fa-times" aria-hidden="true"></em></a> <a id="open_menu" onClick="openNav()"><em  class="fa fa-bars" aria-hidden="true"></em></a> <img src="icons/logo_white.png" class="logo"> <a id="open_upload" onClick="openUpload()"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="javascript:void(0)" class="closebtn display_none" onClick="closeUpload()"><em class="fa fa-times" aria-hidden="true"></em> </a> </nav>
+  <nav id="tabs"> <a class="tab active" id="hot_tab" onClick="changeTab()">
     <h1>HOT</h1>
-    </a>
-    <a class="tab" id="fresh_tab" onClick="changeTab()">
+    </a> <a class="tab" id="fresh_tab" onClick="changeTab()">
     <h1>FRESH</h1>
-    </a>
-  </nav>
+    </a> </nav>
 </div>
 <main class="articles"> 
   
@@ -31,7 +28,10 @@
       </header>
       <h2> +1337 </h2>
     </div>
-    <div class="post_media"> <img src="img/daniel-monteiro-313651.jpg" class="post"> </div>
+    <div class="post_media"> 
+		<img src="img/daniel-monteiro-313651.jpg" class="post">
+		<p class="post display_none"></p>
+	  </div>
     <div class="buttons"> <img src="icons/upvote.png"> <img src="icons/downvote.png"> <img src="icons/like.png"> <img src="icons/comment.png"> </div>
   </article>
   
@@ -45,6 +45,7 @@
       <h2> +1337 </h2>
     </div>
     <div class="post_media">
+		<img class="post">
       <p class="post">Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare #quam</p>
     </div>
     <div class="buttons"> <img src="icons/upvote.png"> <img src="icons/downvote.png"> <img src="icons/like.png"> <img src="icons/comment.png"> </div>
@@ -52,47 +53,35 @@
 </main>
 
 <!-- The Menu -->
-<div id="myNav" class="overlay"> 
+<div id="myNav" class="overlay menu"> 
   <!-- Menu content -->
   <div class="overlay-content">
     <form>
-		<i class="fa fa-search" aria-hidden="true"></i>
+      <i class="fa fa-search" aria-hidden="true"></i>
       <input class="search_field" type="search" placeholder="">
     </form>
-	  
     <ul class="search_results">
-		
-	  <!-- Search user element -->
-		<li class="search_user"><a href="#"><div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div><h2>LoreMonica01</h2></a></li>
-		
-	  <!-- Search tag element --> 
-      <li class="search_user"><a href="#"><div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div><h2>LoreMonica01</h2></a></li>
-
+      
+      <!-- Search user element -->
+      <li class="search_user"><a href="#">
+        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
+        <h2>LoreMonica01</h2>
+        </a></li>
+      
+      <!-- Search tag element -->
+      <li class="search_user"><a href="#">
+        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
+        <h2>LoreMonica01</h2>
+        </a></li>
     </ul>
-	  
   </div>
 </div>
-	
-	
-	<!-- Upload -->
-<div id="upload" class="overlay"> 
-  <!-- Upload content -->
-  <div class="overlay-content">
-    <form>
-		<i class="fa fa-search" aria-hidden="true"></i>
-      <input class="search_field" type="search" placeholder="">
-    </form>
-	  
-    <ul class="search_results">
-		
-	  <!-- Search user element -->
-		<li class="search_user"><a href="#"><div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div><h2>LoreMonica01</h2></a></li>
-		
-	  <!-- Search tag element --> 
-      <li class="search_user"><a href="#"><div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div><h2>LoreMonica01</h2></a></li>
 
-    </ul>
-	  
+<!-- Upload -->
+<div id="upload" class="overlay upload"> 
+  <!-- Upload content -->
+  <div class="overlay-content upload">
+<h1> MITÄ HELVETTIÄ <h1>
   </div>
 </div>
 

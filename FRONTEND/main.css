@@ -211,20 +211,12 @@ article h2 {
     color: #fff;
 }
 
-/* Position the close button (top right corner) */
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-}
-
-.overlay .fa {
+.menu .fa {
 	font-size: 2em;
 	margin: 15px;
 }
 
-.overlay .search_field {
+.menu .search_field {
 	width: 100%;
 	max-width: 400px;
 	padding: 0px 20px;
@@ -237,18 +229,18 @@ article h2 {
     font-size: 1em;
 }
 
-.overlay form {
+.menu form {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 }
 
-.overlay .profile {
+.menu .profile {
     height: 37px;
     width: 37px;
     border-radius: 50%;
 }
-.overlay .profile_border {
+.menu .profile_border {
     display: flex;
     justify-content: center;
     align-items: center;
