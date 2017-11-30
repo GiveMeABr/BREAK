@@ -6,97 +6,113 @@ body {
     margin: 0px;
 }
 p, a {
-	color: #FFF;
+    color: #FFF;
     font-family: "lato", sans-serif;
     font-size: 1em;
 }
-
-h1{
-	font-family: "futura-pt", sans-serif;
+h1 {
+    font-family: "futura-pt", sans-serif;
 }
-
 h2 {
-	font-family: "futura-pt", sans-serif;
+    font-family: "futura-pt", sans-serif;
 }
-
 ul {
-	padding: 0px;
-	list-style: none;
+    padding: 0px;
+    list-style: none;
 }
 
-#upload_header {
-	background: #11998e;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	
-	padding: 120px;
-	font-size: 2em;
-
+#upload-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('img/cloud.png') center center no-repeat;
+    background-size: cover;
+    padding: 120px;
+    font-size: 2em;
 }
 
-.article_upload {
+#upload-bg:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(left, #38ef7d, #11998e);
+    background: -o-linear-gradient(left, #38ef7d, #11998e);
+    background: linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: .8;
+}
+
+#upload-header {
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+}
+
+#upload-header-texts {
+	position: absolute;
+	left: 50px;
+}
+
+.article_upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .article_upload input {
-	margin: 10px;
+    margin: 10px;
 }
-
 .nav_bar {
-	width: 100%;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 #primary {
-	height: 60px;
+    height: 60px;
     background-color: #222222;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 30px;
 }
-
 #tabs {
     display: flex;
     justify-content: space-between;
     align-items: center;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .tab {
-	border: none;
-	background-color: #222222;
-	border-radius: 0;
-	color: #666666;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	z-index: -2;
-	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    background-color: #222222;
+    border-radius: 0;
+    color: #666666;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: -2;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
 .active {
-	color: #fff;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	z-index: -1;
-	box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: -1;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 }
-
 .tab h1 {
-	margin: 6px;
+    margin: 6px;
 }
-
 #primary .logo {
     max-width: 10%;
     min-width: 110px;
@@ -110,7 +126,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
     margin-bottom: 20px;
 }
 article {
@@ -161,7 +177,6 @@ article h2 {
     padding: 3px;
     margin: 10px 10px;
 }
-
 .article_media {
     display: flex;
     align-items: center;
@@ -187,10 +202,9 @@ article h2 {
     height: 50%;
     width: 13%;
 }
-
 /* The Overlay (background) */
 .overlay {
-    margin-top: 90px; /* Add a top margin to avoid content overlay */ 
+    margin-top: 90px; /* Add a top margin to avoid content overlay */
     height: 0;
     width: 100%;
     position: fixed; /* Stay in place */
@@ -198,29 +212,26 @@ article h2 {
     left: 0;
     top: 0;
     background-color: #1A1A1A;
-	overflow-x: hidden;
+    overflow-x: hidden;
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
-
 /* Position the content inside the overlay */
 .overlay-content {
     position: flex;
-	justify-content: flex-start;
+    justify-content: flex-start;
     top: 25%; /* 25% from the top */
     width: 100%; /* 100% width */
     margin-top: 10px; /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
-
-.menu{
+.menu {
     margin-top: 100px;
 }
-
 /* The navigation links inside the overlay */
 .overlay a, .overlay h2 {
-	display: flex;
-	align-items: center;
-	font-family: "futura-pt", sans-serif;
-	vertical-align: middle;
+    display: flex;
+    align-items: center;
+    font-family: "futura-pt", sans-serif;
+    vertical-align: middle;
     padding: 8px;
     text-decoration: none;
     font-size: 1em;
@@ -228,43 +239,36 @@ article h2 {
     display: flex;
     transition: 0.3s; /* Transition effects on hover (color) */
 }
-
 /* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay h2:hover {
     color: #fff;
 }
-
 .menu .fa {
-	font-size: 2em;
-	margin: 15px;
+    font-size: 2em;
+    margin: 15px;
 }
-
 .text_field {
-	width: 100%;
-	max-width: 400px;
-	padding: 0px 20px;
-	height: 50px;
-	border-radius: 40px;
-	background-color: #222222;
-	border-style: none;
-	color: #FFF;
+    width: 100%;
+    max-width: 400px;
+    padding: 0px 20px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: #222222;
+    border-style: none;
+    color: #FFF;
     font-family: "lato", sans-serif;
     font-size: 1em;
 }
-
 .menu form {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
-
-
 .menu .profile {
     height: 37px;
     width: 37px;
     border-radius: 50%;
 }
-
 .menu .profile_border {
     display: flex;
     justify-content: center;
@@ -280,54 +284,61 @@ article h2 {
     padding: 3px;
     margin: 10px 10px;
 }
-
 .search_results a {
-	display: flex;
-	justify-content: flex-start;
-	align-content: center;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+	margin: 5px 40px;
 }
-
+.search_results {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
 .display_none {
-	display: none;
+    display: none;
 }
-
 .visibility_hidden {
-	visibility: hidden;
+    visibility: hidden;
 }
-
 /* UPLOAD PAGE */
+
+.upload {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
 /* Style the tab */
 div.tab {
-	display: flex;
-	align-content: space-around;
-	justify-content: center;
+	width: 100%;
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
     overflow: hidden;
     background-color: #222222;
 }
 
 /* Style the buttons inside the tab */
 div.tab button {
-	color: #fff;
+    color: #fff;
     background-color: inherit;
-    float: left;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
 }
-
 /* Change background color of buttons on hover */
 div.tab button:hover {
     background-color: #333;
 }
-
 /* Create an active/current tablink class */
 div.tab button.active {
     background-color: #444;
 }
-
 /* Style the tab content */
 .tabcontent {
     display: none;
@@ -335,14 +346,19 @@ div.tab button.active {
     border-top: none;
 }
 
+.hashtag-icon {
+	width: 20%;
+}
 
 
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
+.overlay a {
+    font-size: 20px
+}
+.overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+}
 }
