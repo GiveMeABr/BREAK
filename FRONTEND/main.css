@@ -5,6 +5,7 @@ body {
     width: 100%;
     margin: 0px;
 }
+
 p, a {
     color: #FFF;
     font-family: "lato", sans-serif;
@@ -55,6 +56,22 @@ ul {
 #upload-header-texts {
 	position: absolute;
 	left: 50px;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+.g-signin2 {
+	position: fixed;
+    bottom: 50%;
+	right: -50%
+    padding: 20px;
 }
 
 .article_upload {
