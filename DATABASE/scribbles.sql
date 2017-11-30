@@ -1,4 +1,4 @@
-CREATE TABLE User(
+CREATE TABLE Users(
     UserID INT UNIQUE AUTO_INCREMENT PRIMARY KEY,
     Username VARCHAR(20),
     Email VARCHAR(100),
@@ -17,9 +17,9 @@ CREATE TABLE UserTEST(
 CREATE TABLE Article(
     ArticleID INT UNIQUE AUTO_INCREMENT PRIMARY KEY,
     UploadDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    Sender INT NOT NULL,
-    FOREIGN KEY (Sender) REFERENCES User(UserID),
-    Title VARCHAR(60) NOT NULL,
+    Sender INT,
+    FOREIGN KEY (Sender) REFERENCES Users(UserID),
+    Title VARCHAR(60),
     Article VARCHAR(255),
     NSFW BOOLEAN DEFAULT NULL 
 );
@@ -70,7 +70,7 @@ CREATE TABLE Follows(
     PRIMARY KEY (User, Followed)
 );
 
-INSERT INTO User(
+INSERT INTO Users(
     Username,
     Email,
     ModStatus,
@@ -82,4 +82,17 @@ VALUES(
     '1',
     'imemuonaa'
 
+);
+
+INSERT INTO Article(
+    Sender,
+    Title,
+    Article,
+    NSFW
+)
+VALUES(
+    '3',
+    'HAUSKA KOIRAKUVA',
+    'www.kuva.orgy',
+    '0'
 );

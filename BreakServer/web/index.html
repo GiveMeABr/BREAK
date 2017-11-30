@@ -6,17 +6,17 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>UPLOAD YOUR BRUNCH PICS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <form method="post" action="webresources/service">
-            <input type="text" name="username" placeholder="username">
-            <input type="text" name="password" placeholder="password">
-            <input type="text" name="email" placeholder="email">
-            <input type="checkbox" name="ModStatus" value="true"> I'm a moderator<br>
-            <input type="submit">
+        <h1>WELCOME! PLS UP YOUR SAUCY PICTURES HERE</h1>
+        <!-- Give me a --><br>
+        <form method="post" enctype="multipart/form-data" action="do">
+            <input name="fileup" type="file" id="fileinput" accept="image/*" />
+            <input type="submit" value="Upload">
         </form>
     </body>
 </html>
+
