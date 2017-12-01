@@ -4,41 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A1A1A">
-	<meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
 <title>BREAK - Take a break</title>
 <link href="main.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://use.typekit.net/kxk4dlr.css">
 <script src="https://use.fontawesome.com/73da11679b.js"></script>
 </head>
-<body id='login-body'>
-
-
-<!-- The video -->
-<video autoplay muted loop id="myVideo">
-  <source src="vid/342572839.mp4" type="video/mp4">
-</video>
+<body id="login-body">
+<div class="login-container"> 
+  <!-- The video -->
+  <video autoplay muted loop id="myVideo">
+    <source src="vid/805391652.mp4" type="video/mp4">
+  </video>
+  <img src="icons/logo_white.png" class="login-img">
+	<form class="log-in">
+		<h1>Username</h1>
+		<input class="text_field" type="text">
+		<h1>Password</h1>
+		<input class="text_field" type="password">
+		<input type="submit">
+		<a href="register.html">Create a new account</a>
+	</form>
 	
 	
-<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
-
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      };
-    </script>
 	
+	</div>
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

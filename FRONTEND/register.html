@@ -4,128 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A1A1A">
-<title>BRAKE - Take a break</title>
+<title>BREAK - Take a break</title>
 <link href="main.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://use.typekit.net/kxk4dlr.css">
 <script src="https://use.fontawesome.com/73da11679b.js"></script>
 </head>
-<body>
-<div class="nav_bar">
-  <nav id="primary"> <a id="close_menu" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a> <a id="open_menu"><em  class="fa fa-bars" aria-hidden="true"></em></a> <img src="icons/logo_white.png" class="logo"> <a id="open_upload"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a></nav>
-  <nav id="tabs"> <a class="tab active" id="hot_tab">
-    <h1>HOT</h1>
-    </a> <a class="tab" id="fresh_tab" onClick="changeTab()">
-    <h1>FRESH</h1>
-    </a> </nav>
+<body id="login-body">
+<div class="login-container"> 
+  <!-- The video -->
+  <video autoplay muted loop id="myVideo">
+    <source src="vid/805391652.mp4" type="video/mp4">
+  </video>
+  <img src="icons/logo_white.png" class="register-img">
+  <form class="log-in">
+    <h1>Firstame</h1>
+    <input class="text_field" type="text">
+    <h1>Lastname</h1>
+    <input class="text_field" type="text">
+    <h1>Username</h1>
+    <input class="text_field" type="text">
+    <h1>Password</h1>
+    <input class="text_field" type="password">
+    <h1>Password again</h1>
+    <input class="text_field" type="password">
+	  <h1>Profile pic</h1>
+    <input class="input-button" type="file">
+    <input type="submit">
+    <a href="login.html">Already have an account?</a>
+  </form>
 </div>
-<main class="articles"> 
-  
-  <!-- MEDIA ARTICLE -->
-  <article>
-    <div class="article_top">
-      <header>
-        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
-        <h1> Lorem Ipsum dolor sit amet </h1>
-      </header>
-      <h2> +1337 </h2>
-    </div>
-    <div class="article_media"> <img src="img/daniel-monteiro-313651.jpg" class="article">
-      <p class="article display_none"></p>
-    </div>
-    <div class="buttons"> <img src="icons/upvote.png"> <img src="icons/downvote.png"> <img src="icons/like.png"> <img src="icons/comment.png"> </div>
-  </article>
-  
-  <!-- TEXT ARTICLE -->
-  <article>
-    <div class="article_top">
-      <header>
-        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
-        <h1> Lorem Ipsum dolor sit amet </h1>
-      </header>
-      <h2> +1337 </h2>
-    </div>
-    <div class="article_media"> <img class="article">
-      <p class="article">Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare #quam</p>
-    </div>
-    <div class="buttons"> <img src="icons/upvote.png"> <img src="icons/downvote.png"> <img src="icons/like.png"> <img src="icons/comment.png"> </div>
-  </article>
-  
-  <!-- MEDIA ARTICLE -->
-  <article>
-    <div class="article_top">
-      <header>
-        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
-        <h1> Lorem Ipsum dolor sit amet </h1>
-      </header>
-      <h2> +1337 </h2>
-    </div>
-    <div class="article_media"> <img src="img/daniel-monteiro-313651.jpg" class="article">
-      <p class="article display_none"></p>
-    </div>
-    <div class="buttons"> <img src="icons/upvote.png"> <img src="icons/downvote.png"> <img src="icons/like.png"> <img src="icons/comment.png"> </div>
-  </article>
-</main>
-
-<!-- The Menu -->
-<div id="myNav" class="overlay menu"> 
-  <!-- Menu content -->
-  <div class="overlay-content">
-    <form>
-      <i class="fa fa-search" aria-hidden="true"></i>
-      <input class="text_field" type="search" placeholder="">
-    </form>
-    <ul class="search_results">
-      
-      <!-- Search user element -->
-      <li class="search_user"><a href="#">
-        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
-        <h2>LoreMonica01</h2>
-        </a></li>
-      
-      <!-- Search tag element -->
-      <li class="search_user"><a href="#">
-         <img class="hashtag-icon" src="icons/hashtag.png">
-        <h2>LoreMipsum</h2>
-        </a></li>
-		
-    </ul>
-  </div>
-</div>
-
-<!-- Upload -->
-<div id="upload" class="overlay upload"> 
-  <!-- Upload content -->
-  <div class="overlay-content upload">
-    <header id="upload-header">
-      <div id="upload-bg"> </div>
-      <div id="upload-header-texts">
-        <h1>UPLOAD</h1>
-        <p>Lorem Ipsum dolor sit amet</p>
-      </div>
-    </header>
-	  <div>
-    <div class="tab">
-		<button class="tablinks" onclick="openTab(event, 'Media')"><h1>MEDIA</h1></button>
-		<button class="tablinks" onclick="openTab(event, 'Text')"><h1>TEXT</h1></button>
-    </div>
-	  </div>
-    <div id="Media" class="tabcontent">
-      <h1>Media</h1>
-      <form class="article_upload">
-        <input type="file">
-        <input class="text_field" type="text">
-        <input class="text_field" type="text">
-      </form>
-    </div>
-    <div id="Text" class="tabcontent">
-      <h1>Text</h1>
-      <p>Paris is the capital of France.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Use any element to open/show the overlay navigation menu --> 
-<script type="text/javascript" src="js/main.js"></script> 
-<script type="text/javascript" src="js/upload_tab.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
