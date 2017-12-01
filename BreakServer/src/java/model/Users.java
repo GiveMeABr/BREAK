@@ -6,7 +6,9 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,24 +16,29 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author Eero
  */
 @Entity
-@Table(name = "User")
+@Table(name = "Users")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
-    , @NamedQuery(name = "User.findByUserID", query = "SELECT u FROM User u WHERE u.userID = :userID")
-    , @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username")
-    , @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")
-    , @NamedQuery(name = "User.findByModStatus", query = "SELECT u FROM User u WHERE u.modStatus = :modStatus")
-    , @NamedQuery(name = "User.findByUserSecretCode", query = "SELECT u FROM User u WHERE u.userSecretCode = :userSecretCode")})
-public class User implements Serializable {
+    @NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u")
+    , @NamedQuery(name = "Users.findByUserID", query = "SELECT u FROM Users u WHERE u.userID = :userID")
+    , @NamedQuery(name = "Users.findByUsername", query = "SELECT u FROM Users u WHERE u.username = :username")
+    , @NamedQuery(name = "Users.findByEmail", query = "SELECT u FROM Users u WHERE u.email = :email")
+    , @NamedQuery(name = "Users.findByModStatus", query = "SELECT u FROM Users u WHERE u.modStatus = :modStatus")
+    , @NamedQuery(name = "Users.findByUserSecretCode", query = "SELECT u FROM Users u WHERE u.userSecretCode = :userSecretCode")})
+public class Users implements Serializable {
+
+    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "sender")
+    private Collection<Article> articleCollection;*/
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -48,10 +55,10 @@ public class User implements Serializable {
     @Column(name = "UserSecretCode")
     private String userSecretCode;
 
-    public User() {
+    public Users() {
     }
 
-    public User(Integer userID) {
+    public Users(Integer userID) {
         this.userID = userID;
     }
 
@@ -105,10 +112,10 @@ public class User implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof User)) {
+        if (!(object instanceof Users)) {
             return false;
         }
-        User other = (User) object;
+        Users other = (Users) object;
         if ((this.userID == null && other.userID != null) || (this.userID != null && !this.userID.equals(other.userID))) {
             return false;
         }
@@ -117,7 +124,16 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "model.User[ userID=" + userID + " ]";
+        return "model.Users[ userID=" + userID + " ]";
     }
+
+    /*@XmlTransient
+    public Collection<Article> getArticleCollection() {
+        return articleCollection;
+    }
+
+    public void setArticleCollection(Collection<Article> articleCollection) {
+        this.articleCollection = articleCollection;
+    }*/
     
 }

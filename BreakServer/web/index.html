@@ -6,14 +6,39 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>BREAK_SERVER</title>
+
+        <title>TODO supply a title</title>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>WELCOME TO BREAK SERVER SECRET TESTING LAB!</h1>
+
+        
+        <!-- Test for creating a new user --> 
+        <form  method="post" action="webresources/service/users">
+            
+            <input type="text" name="username" placeholder="username">
+            <input type="text" name="password" placeholder="password">
+            <input type="text" name="email" placeholder="email">
+            <input type="checkbox" name="ModStatus" value="true"> I'm a moderator<br>
+            <input type="submit">
+            
+        </form>
+                
+        <!-- Test for submitting articles    
+        <form  method="post" action="webresources/service/articles"> 
+           
+           <input type="text" name="title" placeholder="Title">
+           <input type="text" name="article" placeholder="Write your article here">
+           <input type="checkbox" name="nsfw" value="true"> NSFW<br>
+           <input type="submit">
+            
+        </form>
+         
+-->
         <!-- Give me a --><br>
-        <a href="upload.html">FileUpload</a>
+        
+
     </body>
 </html>
-

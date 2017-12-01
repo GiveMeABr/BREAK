@@ -5,6 +5,11 @@
  */
 package Controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.core.Context;
@@ -18,7 +23,8 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
-import model.User;
+import model.Users;
+import model.Article;
 
 /**
  * REST Web Service
@@ -43,25 +49,67 @@ public class dbService {
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<User> getJson() {
+    public List<Users> getJson() {
        return dbc.getAll();
+    }
+    
+    public List<Article> getJsonArticle() {
+       return dbc.getAllArticle();
     }
     
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public User post(
+    @Path("users")
+    public Users post(
             @FormParam("username") String username,
             @FormParam("password") String password,
             @FormParam("email") String email,
             @FormParam("ModStatus") boolean ModStatus){
-        User u = new User();
+        
+        Users u = new Users();
         u.setUsername(username);
         u.setUserSecretCode(password);
         u.setEmail(email);
         u.setModStatus(ModStatus);
         return dbc.insert(u);
     }
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("articles")
+    public Article postArticle(
+            @FormParam("title") String title,
+            @FormParam("article") String article,
+            
+            @FormParam("nsfw") boolean nsfw){
+        Article a = new Article();
+        
+        //DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        //Date date = new Date();
+        
+        a.setArticle(article);
+        a.setTitle(title);
+        //a.setUploadDate(date);
+        a.setNsfw(nsfw);
+        //a.setSender(???);
+        return dbc.insertArticle(a);
+    }
     
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("upload")
+    public Article postArticleUpload(
+            @FormParam("title") String title,
+            
+            @FormParam("nsfw") boolean nsfw){
+        
+        Article a = new Article();
+        
+        a.setArticle("*kuvan osoite*");
+        a.setTitle(title);
+        //a.setUploadDate(date);
+        a.setNsfw(nsfw);
+        //a.setSender(???);
+        return dbc.insertArticle(a);
+    }
     
-
 }
