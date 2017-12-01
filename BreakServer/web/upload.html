@@ -11,12 +11,20 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <script src="JS/main.js"></script>
         <h1>WELCOME! PLS UPLOAD YOUR SAUCY PICTURES HERE</h1>
         <!-- Give me a --><br>
-        <form method="post" enctype="multipart/form-data" action="do">
+        
+        <form name="form1" method="post" enctype="multipart/form-data" action="do">
             <input name="fileup" type="file" id="fileinput" accept="image/*" />
-            <input type="submit" value="Upload">
         </form>
+        
+        <form name="form2" method="post" action="webresources/service/upload">
+           <input type="text" name="title" placeholder="Title">
+           <input type="checkbox" name="nsfw" value="true"> NSFW<br>
+        </form>
+        
+        <input type="button" value="Upload" onclick="submitForms()" />
     </body>
 </html>
 
