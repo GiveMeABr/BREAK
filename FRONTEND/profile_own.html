@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="nav_bar">
-  <nav id="primary"> <a id="close_menu" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a> <a id="open_menu"><em  class="fa fa-bars" aria-hidden="true"></em></a> <img src="icons/logo_white.png" class="logo"> <a id="open_upload"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a></nav>
+  <nav id="primary"> <a id="close_menu" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a> <a id="open_menu"><em  class="fa fa-bars" aria-hidden="true"></em></a> <a id="home-link" href="index.html"><img src="icons/logo_white.png" class="logo"></a> <a id="open_upload"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a></nav>
   <!-- PROFILE HEADER --> 
 </div>
 <div class="profile-head">
@@ -25,25 +25,32 @@
         💋👅💦 </p>
     </div>
   </div>
-  <div class="btn-container">
-	  
-	  <!-- posts button -->
+  <div class="btn-container"> 
+    
+    <!-- posts button -->
     <button class="posts-btn">
     <h1>POSTS</h1>
     </button>
-	  
-	  <!-- friends button -->
-	  <button class="frnd-btn">
+    <!----> 
+    
+    <!-- friends button --> 
+    <a href="friends.html">
+    <button class="frnd-btn">
     <h1>FRIENDS</h1>
     </button>
-	  
+    </a> 
+    <!----> 
+    
   </div>
 </div>
-<nav id="tabs"> <button class="tab" id="hot_tab">
+<nav id="tabs">
+  <button class="tab" id="hot_tab">
   <h1>FAVOURITES</h1>
-  </button> <button class="tab" id="fresh_tab" onClick="changeTab()">
+  </button>
+  <button class="tab" id="fresh_tab" onClick="changeTab()">
   <h1>UPVOTED</h1>
-  </button> </nav>
+  </button>
+</nav>
 </div>
 <main class="articles"> 
   
@@ -51,7 +58,9 @@
   <article>
     <div class="article_top">
       <header>
-        <div class="profile_border"> <div class="cropper"><img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"></div> </div>
+        <div class="profile_border">
+          <div class="cropper"><img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"></div>
+        </div>
         <h1> Lorem Ipsum dolor sit amet </h1>
       </header>
       <h2> +1337 </h2>
@@ -66,7 +75,9 @@
   <article>
     <div class="article_top">
       <header>
-        <div class="profile_border"> <div class="cropper"><img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"></div> </div>
+        <div class="profile_border">
+          <div class="cropper"><img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"></div>
+        </div>
         <h1> Lorem Ipsum dolor sit amet </h1>
       </header>
       <h2> +1337 </h2>
@@ -81,7 +92,9 @@
   <article>
     <div class="article_top">
       <header>
-        <div class="profile_border"> <div class="cropper"><img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"></div> </div>
+        <div class="profile_border">
+          <div class="cropper"><img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"></div>
+        </div>
         <h1> Lorem Ipsum dolor sit amet </h1>
       </header>
       <h2> +1337 </h2>
@@ -99,7 +112,7 @@
   <div class="overlay-content">
     <form>
       <i class="fa fa-search" aria-hidden="true"></i>
-      <input class="text_field" type="search" placeholder="">
+      <input class="search field" type="search" placeholder="">
     </form>
     <ul class="search_results">
       

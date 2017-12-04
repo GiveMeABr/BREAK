@@ -56,7 +56,6 @@ form > a {
     color: #888;
     margin-top: 20px;
     text-align: center;
-    text-decoration: none;
     transition: 0.07s;
 }
 form > a:hover {
@@ -71,6 +70,9 @@ p, a {
     color: #FFF;
     font-family: "lato", sans-serif;
     font-size: 1em;
+}
+a {
+	text-decoration: none;
 }
 h1 {
     font-family: "futura-pt", sans-serif;
@@ -188,6 +190,12 @@ ul {
     padding: 0px 20px
 }
 
+#home-link{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 main {
 	display: flex;
     justify-content: center;
@@ -234,7 +242,7 @@ article h2 {
     border-radius: 50%;
     overflow: hidden;
 }
-.article_top .profile {
+.profile {
     width: 100%;
 }
 .profile-head {
@@ -258,9 +266,6 @@ article h2 {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-}
-.profile-head .profile {
-    width: 100%;
 }
 .profile-head .btn-container {
     display: flex;
@@ -347,6 +352,14 @@ article h2 {
     padding: 3px;
     margin: 10px 10px;
 }
+.friends-page .profile_border {
+    height: 45px;
+    width: 45px;
+    min-height: 45px;
+    min-width: 45px;
+    padding: 3px;
+    margin: 10px 10px;
+}
 .article_media {
     display: flex;
     align-items: center;
@@ -403,7 +416,6 @@ article h2 {
     font-family: "futura-pt", sans-serif;
     vertical-align: middle;
     padding: 8px;
-    text-decoration: none;
     font-size: 1em;
     color: #666666;
     display: flex;
@@ -417,9 +429,12 @@ article h2 {
     font-size: 2em;
     margin: 15px;
 }
-.text_field {
+.friends-page .fa {
+    font-size: 2em;
+    margin: 15px;
+}
+.field {
     margin: 10px 20px 10px 20px;
-    width: 70vw;
     padding: 0px 20px;
     height: 50px;
     border-radius: 40px;
@@ -429,6 +444,13 @@ article h2 {
     font-family: "lato", sans-serif;
     font-size: 1em;
     opacity: .9;
+}
+.text {
+	width: 30vw;
+}
+
+.search {
+    width: 100vw;
 }
 .log-in > .text_field {
     max-width: 500px;
@@ -448,6 +470,12 @@ article h2 {
     opacity: .9;
 }
 .menu form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.friends-page form {
     display: flex;
     justify-content: flex-start;
     align-items: center;
