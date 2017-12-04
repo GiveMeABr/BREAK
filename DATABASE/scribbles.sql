@@ -3,15 +3,8 @@ CREATE TABLE Users(
     Username VARCHAR(20),
     Email VARCHAR(100),
     ModStatus BOOLEAN DEFAULT NULL,
-    UserSecretCode VARCHAR(255)
-);
-
-CREATE TABLE UserTEST(
-    UserID INT UNIQUE AUTO_INCREMENT PRIMARY KEY,
-    Username VARCHAR(20) NOT NULL,
-    Email VARCHAR(100) NOT NULL,
-    ModStatus BOOLEAN DEFAULT NULL,
-    UserSecretCode VARCHAR(255) NOT NULL
+    UserSecretCode VARCHAR(255),
+    ProfilePic VARCHAR(255)
 );
 
 CREATE TABLE Article(
@@ -24,16 +17,16 @@ CREATE TABLE Article(
     NSFW BOOLEAN DEFAULT NULL 
 );
 
-CREATE TABLE Tag(
+CREATE TABLE Tags(
     TagID INT UNIQUE AUTO_INCREMENT PRIMARY KEY,
-    Tag VARCHAR(50) NOT NULL
+    Tag VARCHAR(50)
 );
 
-CREATE TABLE Comment(
-    Comment VARCHAR(160) NOT NULL,
-    Commenter INT NOT NULL,
-    Article INT NOT NULL,
-    FOREIGN KEY (Commenter) REFERENCES User(UserID),
+CREATE TABLE Comments(
+    Comment VARCHAR(160),
+    Commenter INT,
+    Article INT,
+    FOREIGN KEY (Commenter) REFERENCES Users(UserID),
     FOREIGN KEY (Article) REFERENCES Article(ArticleID),
     CommentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
