@@ -19,6 +19,7 @@
   <form class="log-in" method="post" action="webresources/service/users">
     <h1>Username</h1>
     <input class="text field" type="text" name="username" required>
+    <!-- regex for username ^[a-z0-9_-]{3,20}$ -->
 	<h1>Email</h1>
     <input class="text field" type="email" name="email" required>
     <h1>Password</h1>
@@ -26,7 +27,7 @@
     <h1>Password again</h1>
     <input class="text field" id="confirm_password" type="password" name="confirm_password" required>
 	  <h1>Profile pic</h1>
-    <input class="input-button" type="file" required>
+    <input class="input-button" type="file" accept="image/png, image/jpg, image/jpeg, image/gif" required>
     <input type="submit">
     <a href="login.html">Already have an account?</a>
   </form>
