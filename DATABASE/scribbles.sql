@@ -32,8 +32,8 @@ CREATE TABLE Comments(
 );
 
 CREATE TABLE Votes(
-    Voter INT NOT NULL,
-    Article INT NOT NULL,
+    Voter INT,
+    Article INT,
     VoteType BOOLEAN,
     FOREIGN KEY (Voter) REFERENCES User(UserID),
     FOREIGN KEY (Article) REFERENCES Article(ArticleID),
