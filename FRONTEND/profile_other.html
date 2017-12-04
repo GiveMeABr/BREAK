@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A1A1A">
-<title>BREAK - Take a break</title>
+<title>BRAKE - Take a break</title>
 <link href="main.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://use.typekit.net/kxk4dlr.css">
 <script src="https://use.fontawesome.com/73da11679b.js"></script>
@@ -12,19 +12,30 @@
 <body>
 <div class="nav_bar">
   <nav id="primary"> <a id="close_menu" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a> <a id="open_menu"><em  class="fa fa-bars" aria-hidden="true"></em></a> <img src="icons/logo_white.png" class="logo"> <a id="open_upload"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a></nav>
-  <nav id="tabs"> <a class="tab active" id="hot_tab">
-    <h1>HOT</h1>
-    </a> <a class="tab" id="fresh_tab" onClick="changeTab()">
-    <h1>FRESH</h1>
-    </a> </nav>
+	
+	<!-- PROFILE HEADER --> 
 </div>
-<main class="fp-articles"> 
-  
+<div class="profile-head">
+	<div class="profile-picInfo">
+	<div class="profile_border"><div class="cropper"><img src="img/bekir-donmez-372498.jpg" class="profile"></div></div>
+  <div class="info">
+    <h1>LoreMonica01</h1>
+    <p>”Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque orci quis nulla laoreet, nec vehicula arcu vulputate.”<br>💋👅💦 
+ </p>
+		</div>
+  </div>
+	<div class="btn-container">
+		<button class="follow-btn"><h1>FOLLOW</h1></button>
+	</div>
+</div>
+	
+<main class="articles"> 
+	  
   <!-- MEDIA ARTICLE -->
   <article>
     <div class="article_top">
       <header>
-        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
+		  <div class="profile_border"> <div class="cropper"><img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"></div> </div>
         <h1> Lorem Ipsum dolor sit amet </h1>
       </header>
       <h2> +1337 </h2>
@@ -39,7 +50,7 @@
   <article>
     <div class="article_top">
       <header>
-        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
+        <div class="profile_border"> <div class="cropper"><img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"></div> </div>
         <h1> Lorem Ipsum dolor sit amet </h1>
       </header>
       <h2> +1337 </h2>
@@ -54,7 +65,7 @@
   <article>
     <div class="article_top">
       <header>
-        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
+        <div class="profile_border"> <div class="cropper"><img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"></div></div>
         <h1> Lorem Ipsum dolor sit amet </h1>
       </header>
       <h2> +1337 </h2>
@@ -78,7 +89,7 @@
       
       <!-- Search user element -->
       <li class="search_user"><a href="#">
-        <div class="profile_border"> <img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"> </div>
+        <div class="profile_border"> <div class="cropper"><img src="img/WhatsApp Image 2017-11-22 at 17.51.30.jpeg" class="profile"></div></div>
         <h2>LoreMonica01</h2>
         </a></li>
       
@@ -114,7 +125,7 @@
     <div id="Media" class="tabcontent">
       <h1>Media</h1>
       <form class="article_upload">
-        <input class="input-button" type="file">
+        <input type="file">
         <input class="text_field" type="text">
         <input class="text_field" type="text">
       </form>
