@@ -4,15 +4,17 @@ import java.io.*;
 import javax.servlet.http.*;
 import javax.servlet.*;
 import java.sql.*;
+import static javax.servlet.http.MappingMatch.PATH;
  
 /**
  * Servlet implementation class MySQLConnect
  */
- 
+@PATH("login")
 public class LoginServlet extends HttpServlet {
  
     private static final long serialVersionUID = 1L;
  
+        
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
