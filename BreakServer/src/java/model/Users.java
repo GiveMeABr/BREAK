@@ -5,8 +5,12 @@
  */
 package model;
 
+import Controller.dbController;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,6 +21,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -36,7 +41,10 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Users.findByModStatus", query = "SELECT u FROM Users u WHERE u.modStatus = :modStatus")
     , @NamedQuery(name = "Users.findByUserSecretCode", query = "SELECT u FROM Users u WHERE u.userSecretCode = :userSecretCode")})
 public class Users implements Serializable {
-
+    
+    
+    
+    
     /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "sender")
     private Collection<Article> articleCollection;*/
 
@@ -54,6 +62,7 @@ public class Users implements Serializable {
     private Boolean modStatus;
     @Column(name = "UserSecretCode")
     private String userSecretCode;
+    
 
     public Users() {
     }
@@ -76,6 +85,7 @@ public class Users implements Serializable {
 
     public void setUsername(String username) {
         this.username = username;
+        
     }
 
     public String getEmail() {
@@ -124,7 +134,9 @@ public class Users implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Users[ userID=" + userID + " ]";
+        
+            return "model.Users[ userID=" + userID + " ]";
+        
     }
 
     /*@XmlTransient

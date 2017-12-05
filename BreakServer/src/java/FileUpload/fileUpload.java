@@ -5,14 +5,17 @@
  */
 package FileUpload;
 
+import Controller.dbController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.FormParam;
 
 /**
  *
@@ -21,6 +24,9 @@ import javax.servlet.http.HttpServletResponse;
 @MultipartConfig(location = "/var/www/html/articles")
 @WebServlet(name = "fileUpload", urlPatterns = {"/do"})
 public class fileUpload extends HttpServlet {
+    
+    @EJB
+    private dbController dbc;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -52,7 +58,11 @@ public class fileUpload extends HttpServlet {
             request.getPart("fileup").write(request.getPart("fileup").getSubmittedFileName());
             out.print("{\"src\" : \"//10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName() +"\"}");
         }
+        
     }
+    
+    
+    
 
     /**
      * Returns a short description of the servlet.

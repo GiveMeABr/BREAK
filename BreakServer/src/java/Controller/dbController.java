@@ -26,7 +26,12 @@ public class dbController {
     }
     
     public List<Users> getAll(){
-       List<Users> lst = em.createNamedQuery("User.findAll").getResultList(); 
+       List<Users> lst = em.createNamedQuery("Users.findAll").getResultList(); 
+       return lst;
+    }
+    
+    public List<Users> getUsername(){
+       List<Users> lst = em.createNamedQuery("Users.findByUsername").getResultList(); 
        return lst;
     }
     
