@@ -201,7 +201,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    margin-bottom: 20px;
+    margin: 0px 20px 20px 20px;
 }
 
 .fp-articles {
@@ -379,14 +379,22 @@ article h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+	padding: 0px 20px 0px 20px
 }
 .buttons button {
+	display: flex;
+    justify-content: center;
+    align-items: center;
 	background-color: #222;
 	border: none;
     max-width: 100px;
     margin: 0px 5% 0px 5%;
     height: 50%;
     width: 13%;
+}
+
+button > img {
+	width: 14vw;
 }
 /* The Overlay (background) */
 .overlay {
