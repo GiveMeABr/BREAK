@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.FormParam;
 import model.Article;
 
+
 /**
  *
  * @author nyman
@@ -52,17 +53,27 @@ public class fileUpload extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response
+            )
             throws ServletException, IOException {
         response.setContentType("application/json");
         try (PrintWriter out = response.getWriter()) {
             request.getPart("fileup").write(request.getPart("fileup").getSubmittedFileName());
             out.print("{\"src\" : \"//10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName() +"\"}");
-            String imgSrc = "//10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName();
+            String imgSrc = "10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName();
+            
+            boolean nsfw = request.getParameter( "nsfw" ) != null;
+            
+            //request.getCookies()
+             
             
             Article a = new Article();
             
             a.setArticle(imgSrc);
+            a.setTitle(request.getParameter("title"));
+            //a.setSender();
+            a.setNsfw(nsfw);
+            //a.setUploadDate(uploadDate);
             dbc.insertArticle(a);
         
         }
