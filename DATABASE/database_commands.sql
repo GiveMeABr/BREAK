@@ -35,7 +35,7 @@ CREATE TABLE Votes(
     Voter INT,
     Article INT,
     VoteType BOOLEAN,
-    FOREIGN KEY (Voter) REFERENCES User(UserID),
+    FOREIGN KEY (Voter) REFERENCES Users(UserID),
     FOREIGN KEY (Article) REFERENCES Article(ArticleID),
     PRIMARY KEY (Voter, Article)
 );
@@ -44,13 +44,13 @@ CREATE TABLE TagMap(
     Article INT,
     Tag INT,
     FOREIGN KEY (Article) REFERENCES Article(ArticleID),
-    FOREIGN KEY (Tag) REFERENCES Tag(TagID),
+    FOREIGN KEY (Tag) REFERENCES Tags(TagID),
 );
 
 CREATE TABLE Favorites(
     User INT,
     Article INT,
-    FOREIGN KEY (User) REFERENCES User(UserID),
+    FOREIGN KEY (User) REFERENCES Users(UserID),
     FOREIGN KEY (Article) REFERENCES Article(ArticleID),
     PRIMARY KEY (User, Article)
 );
@@ -58,8 +58,8 @@ CREATE TABLE Favorites(
 CREATE TABLE Follows(
     User INT,
     Followed INT,
-    FOREIGN KEY (User) REFERENCES User(UserID),
-    FOREIGN KEY (User) REFERENCES User(UserID),
+    FOREIGN KEY (User) REFERENCES Users(UserID),
+    FOREIGN KEY (User) REFERENCES Users(UserID),
     PRIMARY KEY (User, Followed)
 );
 
