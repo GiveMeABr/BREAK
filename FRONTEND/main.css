@@ -209,6 +209,7 @@ main {
 
 }
 article {
+	width: 100%;
     background-color: #222222;
     border-radius: 10px;
     margin: 20px 20px;
@@ -368,9 +369,9 @@ article h2 {
 .article {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 10px 25px 10px 25px;
-    max-width: 97%;
+    justify-content: flex-start;
+    margin: 10px 30px 10px 30px;
+    width: 97%;
     font-family: "roboto-mono", monospace;
     font-size: 1.3em;
 }
