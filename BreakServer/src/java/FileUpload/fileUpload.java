@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.FormParam;
+import model.Article;
 
 /**
  *
@@ -57,6 +58,13 @@ public class fileUpload extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             request.getPart("fileup").write(request.getPart("fileup").getSubmittedFileName());
             out.print("{\"src\" : \"//10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName() +"\"}");
+            String imgSrc = "//10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName();
+            
+            Article a = new Article();
+            
+            a.setArticle(imgSrc);
+            dbc.insertArticle(a);
+        
         }
         
     }
