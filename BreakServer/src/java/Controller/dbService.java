@@ -5,30 +5,19 @@
  */
 package Controller;
 
-import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 import javax.ejb.EJB;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
-import static javax.ws.rs.HttpMethod.POST;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.NewCookie;
+import javax.ws.rs.core.Response;
 import model.Users;
 import model.Article;
 
@@ -69,7 +58,7 @@ public class dbService {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("users")
-    public Users post(
+    public Response post(
             @FormParam("username") String username,
             @FormParam("password") String password,
             @FormParam("email") String email,
@@ -101,7 +90,7 @@ public class dbService {
         u.setUserSecretCode(password);
         u.setEmail(email);
         u.setModStatus(ModStatus);
-        return dbc.insert(u);
+        return Response.ok(dbc.insert(u)).cookie(new NewCookie("moi olen", "keksi")).build();
 
     }
 
