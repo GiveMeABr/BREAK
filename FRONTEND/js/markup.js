@@ -9,6 +9,13 @@ const article = {
 	votes: '+ 420'
 };
 
+const comment = {
+	user: '',
+	profilePic: '',
+	commentText: '',
+	date: ''
+};
+
 const markupImg = `
   <!-- MEDIA ARTICLE -->
   <article>
@@ -50,6 +57,25 @@ const markupTxt = `
   </article>
 `;
 
+const markupComment = `
+<!-- Comment -->
+	<article class="comment">
+    <div class="article_top">
+      <header>
+        <div class="profile_border">
+          <div class="cropper"><img src="${comment.profilePic}" class="profile"></div>
+        </div>
+        <h1 class="username">${comment.user}</h1>
+      </header>
+    </div>
+      <p>${comment.commentText}</p>
+	<footer class="comment-footer">
+		<h2>${comment.date}</h2>
+	</footer>
+  </article>
+`;
+
 
 document.querySelector("main").innerHTML += markupTxt;
 document.querySelector("main").innerHTML += markupImg;
+document.querySelector(".comments-container").innerHTML += markupComment;

@@ -206,7 +206,6 @@ main {
 
 .fp-articles {
     margin-top: 90px; /* Add a top margin to avoid content overlay */
-
 }
 article {
 	width: 100%;
@@ -237,6 +236,41 @@ article h2 {
     align-items: center;
     padding: 7px 7px 0px 7px;
 }
+.comment header {
+    display: flex;
+    align-items: center;
+    padding: 7px 7px 0px 7px;
+}
+.comments-container {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin: 0px 20px 20px 20px;
+}
+.comment {
+	width: 100%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin: 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 900px;
+}
+
+.comment header {
+	display: flex;
+	flex-direction: row;
+	font-size: 1em;
+}
+.comment-footer {
+	display: flex;
+	justify-content: flex-end;
+	padding: 20px;
+}
+.comment p {
+	margin: 10px 50px 10px 50px;
+	line-height: 1.5;
+}
 .cropper {
     width: 93%;
     height: 93%;
@@ -253,8 +287,8 @@ article h2 {
     padding: 13vh 2vw 1vw 2vw;
     background-color: #2E2D2D;
 }
-.profile-picInfo p {
-    margin-top: 0;
+.profile-picInfo h1 {
+    font-size: 7vw;
 }
 .profile-head .info {
     display: flex;
@@ -264,7 +298,7 @@ article h2 {
 }
 .profile-head .profile-picInfo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: row;
 }
