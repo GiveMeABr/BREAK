@@ -157,16 +157,28 @@ ul {
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.hotfresh-tab {
+	border: none;
+	background-color: #222;
+	width: 100%;
+}
+.hotfresh-tab h1 {
+	color: #FFF;
+}
 .tab {
+    font-family: "futura-pt", sans-serif;
+	font-weight: bold;
+	font-size: 1.5em;
     border: none;
     background-color: #222222;
     border-radius: 0;
-    color: #666666;
+    color: #666;
     width: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
     z-index: -2;
+	padding: 10px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .tab:focus {
@@ -178,9 +190,7 @@ ul {
     z-index: -1;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 }
-.tab h1 {
-    margin: 6px;
-}
+
 #primary .logo {
     max-width: 10%;
     min-width: 110px;
@@ -351,7 +361,6 @@ article h2 {
 }
 .menu .profile {
     width: 100%;
-    border-radius: 50%;
 }
 .profile_border {
     display: flex;
@@ -441,6 +450,7 @@ button > img {
     top: 0;
     background-color: #1A1A1A;
     overflow-x: hidden;
+	overflow-y: scroll;
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 /* Position the content inside the overlay */
@@ -489,6 +499,9 @@ button > img {
     font-family: "lato", sans-serif;
     font-size: 1em;
     opacity: .9;
+}
+.article-text {
+	height: 100px;
 }
 .text {
 	width: 30vw;
@@ -583,6 +596,9 @@ div.tab button.active {
     display: none;
     padding: 6px 12px;
     border-top: none;
+}
+textarea {
+	padding: 20px !important;
 }
 .hashtag-icon {
     width: 20%;

@@ -12,10 +12,10 @@
 <body>
 <div class="nav_bar">
   <nav id="primary"> <a id="close_menu" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a> <a id="open_menu"><em  class="fa fa-bars" aria-hidden="true"></em></a> <a id="home-link" href="index.html"><img src="icons/logo_white.png" class="logo"></a> <a id="open_upload"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a></nav>
-  <nav id="tabs"> <a class="tab active" id="hot_tab">
-    <h1>HOT</h1>
-    </a> <a class="tab" id="fresh_tab" onClick="changeTab()">
-    <h1>FRESH</h1>
+  <nav id="tabs"> <a class="tab" id="hot_tab">
+    HOT
+    </a> <a class="tab" id="fresh_tab">
+    FRESH
     </a> </nav>
 </div>
 <main class="fp-articles"> 
@@ -24,42 +24,66 @@
   <article>
     <div class="article_top">
       <header>
-<div class="profile_border"><div class="cropper"><img src="img/bekir-donmez-372498.jpg" class="profile"></div></div>        <h1> Lorem Ipsum dolor sit amet </h1>
+        <div class="profile_border">
+          <div class="cropper"><img src="img/bekir-donmez-372498.jpg" class="profile"></div>
+        </div>
+        <h1> Lorem Ipsum dolor sit amet </h1>
       </header>
       <h2> +1337 </h2>
     </div>
     <div class="article_media"> <img src="img/daniel-monteiro-313651.jpg" class="article">
       <p class="article display_none"></p>
     </div>
-	  <div class="buttons"> <button class="upvote"><img src="icons/upvote.png"></button> <button class="downvote"><img src="icons/downvote.png"></button> <button class="like"><img src="icons/like.png"></button><button class="comment"><img src="icons/comment.png"></button> </div>
+    <div class="buttons">
+      <button class="upvote"><img src="icons/upvote.png"></button>
+      <button class="downvote"><img src="icons/downvote.png"></button>
+      <button class="like"><img src="icons/like.png"></button>
+      <button class="comment"><img src="icons/comment.png"></button>
+    </div>
   </article>
   
   <!-- TEXT ARTICLE -->
   <article>
     <div class="article_top">
       <header>
-<div class="profile_border"><div class="cropper"><img src="img/bekir-donmez-372498.jpg" class="profile"></div></div>        <h1> Lorem Ipsum dolor sit amet </h1>
+        <div class="profile_border">
+          <div class="cropper"><img src="img/bekir-donmez-372498.jpg" class="profile"></div>
+        </div>
+        <h1> Lorem Ipsum dolor sit amet </h1>
       </header>
       <h2> +1337 </h2>
     </div>
     <div class="article_media">
       <p class="article">Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare #quam</p>
     </div>
-    <div class="buttons"> <button class="upvote"><img src="icons/upvote.png"></button> <button class="downvote"><img src="icons/downvote.png"></button> <button class="like"><img src="icons/like.png"></button><button class="comment"><img src="icons/comment.png"></button> </div>
+    <div class="buttons">
+      <button class="upvote"><img src="icons/upvote.png"></button>
+      <button class="downvote"><img src="icons/downvote.png"></button>
+      <button class="like"><img src="icons/like.png"></button>
+      <button class="comment"><img src="icons/comment.png"></button>
+    </div>
   </article>
   
   <!-- MEDIA ARTICLE -->
   <article>
     <div class="article_top">
       <header>
-<div class="profile_border"><div class="cropper"><img src="img/bekir-donmez-372498.jpg" class="profile"></div></div>        <h1> Lorem Ipsum dolor sit amet </h1>
+        <div class="profile_border">
+          <div class="cropper"><img src="img/bekir-donmez-372498.jpg" class="profile"></div>
+        </div>
+        <h1> Lorem Ipsum dolor sit amet </h1>
       </header>
       <h2> +1337 </h2>
     </div>
     <div class="article_media"> <img src="img/daniel-monteiro-313651.jpg" class="article">
       <p class="article display_none"></p>
     </div>
-    <div class="buttons"> <button class="upvote"><img src="icons/upvote.png"></button> <button class="downvote"><img src="icons/downvote.png"></button> <button class="like"><img src="icons/like.png"></button><button class="comment"><img src="icons/comment.png"></button> </div>
+    <div class="buttons">
+      <button class="upvote"><img src="icons/upvote.png"></button>
+      <button class="downvote"><img src="icons/downvote.png"></button>
+      <button class="like"><img src="icons/like.png"></button>
+      <button class="comment"><img src="icons/comment.png"></button>
+    </div>
   </article>
 </main>
 
@@ -75,7 +99,10 @@
       
       <!-- Search user element -->
       <li class="search_user"><a href="#">
-<div class="profile_border"><div class="cropper"><img src="img/bekir-donmez-372498.jpg" class="profile"></div></div>        <h2>LoreMonica01</h2>
+        <div class="profile_border">
+          <div class="cropper"><img src="img/bekir-donmez-372498.jpg" class="profile"></div>
+        </div>
+        <h2>LoreMonica01</h2>
         </a></li>
       
       <!-- Search tag element -->
@@ -108,23 +135,31 @@
       </div>
     </div>
     <div id="Media" class="tabcontent">
-      <h1>Media</h1>
       <form class="article_upload">
         <input class="input-button" type="file">
-        <input class="text_field" type="text">
-        <input class="text_field" type="text">
+		  <h1>Title</h1>
+        <input class="text field" type="text" name="title">
+		  <h1>Tags</h1>
+        <input class="text field" type="text" name"tags" placeholder="Separate tags with a comma">
+		  <input type="submit">
       </form>
     </div>
-    <div id="Text" class="tabcontent">
-      <h1>Text</h1>
-      <p>Paris is the capital of France.</p>
+    <div id="Text" class="tabcontent textpost-content">
+      <form class="article_upload">
+		  <h1>Title</h1>
+        <input class="text field" type="text" name="title">
+		  <h1>Whats on your mind?</h1>
+		  <textarea class="text field article-text" rows="10" cols="30" name="title"></textarea>
+		  <h1>Tags</h1>
+        <input class="text field" type="text" name"tags" placeholder="Separate tags with a comma">
+		  <input type="submit">
     </div>
   </div>
 </div>
 
 <!-- Use any element to open/show the overlay navigation menu --> 
 <script type="text/javascript" src="js/main.js"></script> 
-<script type="text/javascript" src="js/upload_tab.js"></script>
-<script type="text/javascript" src="js/markup.js"></script>	
+<script type="text/javascript" src="js/upload_tab.js"></script> 
+<script type="text/javascript" src="js/markup.js"></script>
 </body>
 </html>
