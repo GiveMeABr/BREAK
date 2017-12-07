@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package FileUpload;
+package fileupload;
 
-import Controller.dbController;
+import controller.DbController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -26,7 +26,7 @@ import model.Users;
 public class UserRegister extends HttpServlet {
 
     @EJB
-    private dbController dbc;
+    private DbController dbc;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

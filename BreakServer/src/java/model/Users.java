@@ -5,7 +5,7 @@
  */
 package model;
 
-import Controller.dbController;
+import controller.DbController;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;

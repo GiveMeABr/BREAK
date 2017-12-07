@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -27,15 +27,15 @@ import model.Article;
  * @author Eero
  */
 @Path("service")
-public class dbService {
+public class DbService {
 
     @EJB
-    private dbController dbc;
+    private DbController dbc;
 
     /**
      * Creates a new instance of GenericResource
      */
-    public dbService() {
+    public DbService() {
     }
 
     Users u = new Users();

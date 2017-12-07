@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package controller;
 
 import java.util.List;
 import javax.ejb.Stateless;
@@ -16,12 +16,12 @@ import model.Article;
  * @author Eero
  */
 @Stateless
-public class dbController {
+public class DbController {
     
     @PersistenceContext
     private EntityManager em;
     
-    public dbController (){
+    public DbController (){
         
     }
     
