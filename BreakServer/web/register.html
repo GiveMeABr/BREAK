@@ -11,11 +11,16 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        
         <h1>REGISTER YOUR ACCOUNT</h1>
-        <input type="text" name="username" placeholder="username">
-        <input type="text" name="password" placeholder="password">
-        <input type="text" name="email" placeholder="email">
-        <input type="checkbox" name="ModStatus" value="true"> I'm a moderator<br>
-        <input type="submit">
+        
+        <form name="registerform" method="post" enctype="multipart/form-data" action="register">
+            <input type="text" name="username" placeholder="username">
+            <input type="text" name="password" placeholder="password">
+            <input type="text" name="email" placeholder="email">
+            <input name="fileup" type="file" accept="image/*">
+            <input type="submit" value="Upload">
+        </form>
+        
     </body>
 </html>

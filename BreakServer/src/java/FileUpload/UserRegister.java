@@ -16,13 +16,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.FormParam;
+import model.Users;
 
 /**
  *
  * @author nyman
  */
-@MultipartConfig(location = "/var/www/html/articles")
-@WebServlet(name = "fileUpload", urlPatterns = {"/do"})
+@MultipartConfig(location = "/var/www/html/profilepics")
+@WebServlet(name = "UserRegister", urlPatterns = {"/register"})
 public class UserRegister extends HttpServlet {
     
     @EJB
@@ -55,8 +56,25 @@ public class UserRegister extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("application/json");
         try (PrintWriter out = response.getWriter()) {
+            //get username
             request.getPart("fileup").write(request.getPart("fileup").getSubmittedFileName());
-            out.print("{\"src\" : \"//10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName() +"\"}");
+            out.print("{\"src\" : \"//10.114.34.142/profilepics/" + request.getPart("fileup").getSubmittedFileName() +"\"}");
+
+            String imgSrc = "10.114.34.142/profilepics/" + request.getPart("fileup").getSubmittedFileName();
+            String userName = request.getParameter("username");
+            String email = request.getParameter("email");
+            String passwd = request.getParameter("password");
+            
+            out.print(" " + userName + " " + passwd + " " + email);
+            
+            Users u = new Users();
+            
+            u.setUsername(userName);
+            u.setEmail(email);
+            u.setUserSecretCode(passwd);
+            u.setProfilePic(imgSrc);
+            
+            dbc.insert(u);
         }
         
     }

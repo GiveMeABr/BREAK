@@ -62,6 +62,8 @@ public class Users implements Serializable {
     private Boolean modStatus;
     @Column(name = "UserSecretCode")
     private String userSecretCode;
+    @Column(name = "ProfilePic")
+    private String profilePic;
     
 
     public Users() {
@@ -110,6 +112,14 @@ public class Users implements Serializable {
 
     public void setUserSecretCode(String userSecretCode) {
         this.userSecretCode = userSecretCode;
+    }
+    
+    public String getProfilePic(){
+        return profilePic;
+    }
+    
+    public void setProfilePic(String profilePic){
+        this.profilePic = profilePic;
     }
 
     @Override
