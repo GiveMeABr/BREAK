@@ -5,6 +5,9 @@ body {
     width: 100%;
     margin: 0px;
     overflow-x: hidden;
+	color: #FFF;
+    font-family: "lato", sans-serif;
+	
 }
 #login-body {
     display: flex;
@@ -358,6 +361,9 @@ article h2 {
 .menu .profile {
     width: 100%;
 }
+.pic-usrname{
+	display: flex;
+}
 .profile_border {
     display: flex;
     justify-content: center;
@@ -375,6 +381,11 @@ article h2 {
     max-width: 20vw;
     padding: 0.3vw;
     margin: 1vw 10vw 1vw 10vw;
+}
+.profile-signout {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 50px;
 }
 .article_top .profile_border {
     height: 45px;
@@ -509,7 +520,7 @@ button > img {
     width: 30vw;
 }
 .search {
-    width: 100vw;
+    width: 80vw;
 }
 .log-in > .text_field {
     max-width: 500px;
