@@ -1,21 +1,38 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<!doctype html>
 <html>
-    <head>
-        <title>REGISTER</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1>REGISTER YOUR ACCOUNT</h1>
-        <input type="text" name="username" placeholder="username">
-        <input type="text" name="password" placeholder="password">
-        <input type="text" name="email" placeholder="email">
-        <input type="checkbox" name="ModStatus" value="true"> I'm a moderator<br>
-        <input type="submit">
-    </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1A1A">
+<title>BREAK - Register</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.typekit.net/kxk4dlr.css">
+<script src="https://use.fontawesome.com/73da11679b.js"></script>
+</head>
+<body id="login-body">
+<div class="reg-container"> 
+  <!-- The video -->
+  <video autoplay muted loop id="myVideo">
+    <source src="vid/805391652.mp4" type="video/mp4">
+  </video>
+  <img src="icons/logo_white.png" class="register-img">
+  <form class="log-in" method="post" action="webresources/service/users">
+    <h1>Username</h1>
+    <input class="text field" type="text" name="username" required>
+    <!-- regex for username ^[a-z0-9_-]{3,20}$ -->
+	<h1>Email</h1>
+    <input class="text field" type="email" name="email" required>
+    <h1>Password</h1>
+    <input class="text field" id="password" type="password" name="password" required>
+    <h1>Password again</h1>
+    <!-- <input class="text field" id="confirm_password" type="password" name="confirm_password" required> -->
+	  <h1>Profile pic</h1>
+    <!-- <input class="input-button" type="file" accept="image/png, image/jpg, image/jpeg, image/gif" required> -->
+    <input type="submit">
+    <a href="login.html">Already have an account?</a>
+  </form>
+</div>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/passCheck.js"></script>
+</body>
 </html>
