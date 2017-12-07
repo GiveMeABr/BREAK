@@ -72,7 +72,7 @@ p, a {
     font-size: 1em;
 }
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 h1 {
     font-family: "futura-pt", sans-serif;
@@ -158,17 +158,17 @@ ul {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .hotfresh-tab {
-	border: none;
-	background-color: #222;
-	width: 100%;
+    border: none;
+    background-color: #222;
+    width: 100%;
 }
 .hotfresh-tab h1 {
-	color: #FFF;
+    color: #FFF;
 }
 .tab {
     font-family: "futura-pt", sans-serif;
-	font-weight: bold;
-	font-size: 1.5em;
+    font-weight: bold;
+    font-size: 1.5em;
     border: none;
     background-color: #222222;
     border-radius: 0;
@@ -178,7 +178,7 @@ ul {
     justify-content: center;
     align-content: center;
     z-index: -2;
-	padding: 10px;
+    padding: 10px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .tab:focus {
@@ -190,7 +190,6 @@ ul {
     z-index: -1;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 }
-
 #primary .logo {
     max-width: 10%;
     min-width: 110px;
@@ -199,26 +198,23 @@ ul {
     font-size: 1.7em;
     padding: 0px 20px
 }
-
-#home-link{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+#home-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 main {
-	display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
     margin: 0px 20px 20px 20px;
 }
-
 .fp-articles {
     margin-top: 90px; /* Add a top margin to avoid content overlay */
 }
 article {
-	width: 100%;
+    width: 100%;
     background-color: #222222;
     border-radius: 10px;
     margin: 20px 20px;
@@ -252,34 +248,33 @@ article h2 {
     padding: 7px 7px 0px 7px;
 }
 .comments-container {
-	display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
     margin: 0px 20px 20px 20px;
 }
 .comment {
-	width: 100%;
+    width: 100%;
     background-color: #222222;
     border-radius: 10px;
     margin: 20px 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     max-width: 900px;
 }
-
 .comment header {
-	display: flex;
-	flex-direction: row;
-	font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    font-size: 1em;
 }
 .comment-footer {
-	display: flex;
-	justify-content: flex-end;
-	padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
 }
 .comment p {
-	margin: 10px 50px 10px 50px;
-	line-height: 1.5;
+    margin: 10px 50px 10px 50px;
+    line-height: 1.5;
 }
 .cropper {
     width: 93%;
@@ -323,7 +318,7 @@ article h2 {
     border: none;
     font-size: 1.5em;
     margin: 5px 10px;
-	color: #FFF;
+    color: #FFF;
 }
 .btn-container button {
     display: flex;
@@ -422,22 +417,21 @@ article h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-	padding: 0px 20px 0px 20px
+    padding: 0px 20px 0px 20px
 }
 .buttons button {
-	display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-	background-color: #222;
-	border: none;
+    background-color: #222;
+    border: none;
     max-width: 100px;
     margin: 0px 5% 0px 5%;
     height: 50%;
     width: 13%;
 }
-
 button > img {
-	width: 14vw;
+    width: 14vw;
 }
 /* The Overlay (background) */
 .overlay {
@@ -450,16 +444,21 @@ button > img {
     top: 0;
     background-color: #1A1A1A;
     overflow-x: hidden;
-	overflow-y: scroll;
+    overflow-y: scroll;
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 /* Position the content inside the overlay */
 .overlay-content {
+    height: 10000px;
+    overflow-y: scroll;
     position: flex;
     justify-content: flex-start;
     top: 25%; /* 25% from the top */
     width: 100%; /* 100% width */
     margin-top: 10px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+.overlay-content form {
+    height: 80%;
 }
 .menu {
     margin-top: 100px;
@@ -501,12 +500,11 @@ button > img {
     opacity: .9;
 }
 .article-text {
-	height: 100px;
+    height: 100px;
 }
 .text {
-	width: 30vw;
+    width: 30vw;
 }
-
 .search {
     width: 100vw;
 }
@@ -532,7 +530,6 @@ button > img {
     justify-content: flex-start;
     align-items: center;
 }
-
 .friends-page form {
     display: flex;
     justify-content: flex-start;
@@ -598,16 +595,33 @@ div.tab button.active {
     border-top: none;
 }
 textarea {
-	padding: 20px !important;
+    padding: 20px !important;
 }
 .hashtag-icon {
     width: 20%;
 }
 
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-.overlay a {
-    font-size: 20px
+@media screen and (max-height: 900px) {
+.overlay h1 {
+    font-size: 1em;
+}
+#upload-header {
+    display: none;
+}
+.overlay-content textarea {
+    height: 50px;
+    padding: 5px;
+}
+.overlay-content form {
+    width: 90vw;
+    height: 20px;
+    margin-top: 120px;
+}
+.overlay-content .search-form {
+    width: 90vw;
+    height: 20px;
+    margin-top: 20px;
 }
 .overlay .closebtn {
     font-size: 40px;
