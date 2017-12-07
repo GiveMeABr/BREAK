@@ -1,0 +1,631 @@
+@charset "UTF-8";/* CSS Document */
+body {
+    background-color: #1A1A1A;
+    color: #FFF;
+    width: 100%;
+    margin: 0px;
+    overflow-x: hidden;
+}
+#login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10vh;
+}
+.reg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+.login-img {
+    margin-top: 16vh;
+    margin-bottom: 4vh;
+    width: 40vw;
+    min-width: 250px;
+}
+.register-img {
+    margin-top: -5vh;
+    margin-bottom: 4vh;
+    width: 35vw;
+    min-width: 250px;
+    max-width: 400px
+}
+form.log-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+.log-in > input {
+    background-color: #BCBCBC;
+    margin: 10px;
+    text-align: center;
+}
+form > a {
+    color: #888;
+    margin-top: 20px;
+    text-align: center;
+    transition: 0.07s;
+}
+form > a:hover {
+    color: #fff;
+    font-size: 1.1em;
+}
+form > h1 {
+    font-size: 1.5em;
+    margin-bottom: -1px;
+}
+p, a {
+    color: #FFF;
+    font-family: "lato", sans-serif;
+    font-size: 1em;
+}
+a {
+    text-decoration: none;
+}
+h1 {
+    font-family: "futura-pt", sans-serif;
+}
+h2 {
+    font-family: "futura-pt", sans-serif;
+}
+ul {
+    padding: 0px;
+    list-style: none;
+}
+#upload-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('img/cloud.png') center center no-repeat;
+    background-size: cover;
+    padding: 120px;
+    font-size: 2em;
+}
+#upload-bg:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(left, #38ef7d, #11998e);
+    background: -o-linear-gradient(left, #38ef7d, #11998e);
+    background: linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: .8;
+}
+#upload-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#upload-header-texts {
+    position: absolute;
+    left: 50px;
+}
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    z-index: -9999;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.2;
+}
+.article_upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.article_upload input {
+    margin: 10px;
+}
+.nav_bar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#primary {
+    height: 60px;
+    background-color: #222222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+}
+#tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.hotfresh-tab {
+    border: none;
+    background-color: #222;
+    width: 100%;
+}
+.hotfresh-tab h1 {
+    color: #FFF;
+}
+.tab {
+    font-family: "futura-pt", sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    border: none;
+    background-color: #222222;
+    border-radius: 0;
+    color: #666;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: -2;
+    padding: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.tab:focus {
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: -1;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+#primary .logo {
+    max-width: 10%;
+    min-width: 110px;
+}
+#primary .fa {
+    font-size: 1.7em;
+    padding: 0px 20px
+}
+#home-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin: 0px 20px 20px 20px;
+}
+.fp-articles {
+    margin-top: 90px; /* Add a top margin to avoid content overlay */
+}
+article {
+    width: 100%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin: 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 900px;
+}
+article h1 {
+    font-size: 1em;
+    padding: 5px;
+}
+article h2 {
+    font-family: "futura-pt", sans-serif;
+    font-size: 1em;
+    color: #666666;
+    margin: 10px 15px 0px 0px;
+}
+.article_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+}
+.article_top header {
+    display: flex;
+    align-items: center;
+    padding: 7px 7px 0px 7px;
+}
+.comment header {
+    display: flex;
+    align-items: center;
+    padding: 7px 7px 0px 7px;
+}
+.comments-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin: 0px 20px 20px 20px;
+}
+.comment {
+    width: 100%;
+    background-color: #222222;
+    border-radius: 10px;
+    margin: 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 900px;
+}
+.comment header {
+    display: flex;
+    flex-direction: row;
+    font-size: 1em;
+}
+.comment-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+.comment p {
+    margin: 10px 50px 10px 50px;
+    line-height: 1.5;
+}
+.cropper {
+    width: 93%;
+    height: 93%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile {
+    width: 100%;
+}
+.profile-head {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 13vh 2vw 1vw 2vw;
+    background-color: #2E2D2D;
+}
+.profile-picInfo h1 {
+    font-size: 7vw;
+}
+.profile-head .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 60px;
+}
+.profile-head .profile-picInfo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.profile-head .btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-container {
+    margin-right: 5vw;
+}
+.btn-container h1 {
+    border: none;
+    font-size: 1.5em;
+    margin: 5px 10px;
+    color: #FFF;
+}
+.btn-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px transparent;
+    border-radius: 500px;
+    margin: 1vw 0vw 2vh 1vw;
+    padding: 3px;
+}
+.posts-btn {
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.frnd-btn {
+    border: none;
+    background-image: none;
+    background: #7F00FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.follow-btn {
+    background-image: linear-gradient(#2E2D2D, #2E2D2D), radial-gradient(circle at top left, #7f00ff, #e100ff);
+    background-clip: content-box, border-box;
+    color: #FFF;
+    background-color: #2E2D2D;
+}
+.follow-btn:active {
+    border: none;
+    background-image: none;
+    background: #7F00FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.menu .profile {
+    width: 100%;
+}
+.profile_border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(#222222, #222222), radial-gradient(circle at top left, #7f00ff, #e100ff);
+    background-clip: content-box, border-box;
+    margin-right: 5px;
+}
+.profile-head .profile_border {
+    height: 20vw;
+    width: 20vw;
+    min-width: 20vw;
+    max-width: 20vw;
+    padding: 0.3vw;
+    margin: 1vw 10vw 1vw 10vw;
+}
+.article_top .profile_border {
+    height: 45px;
+    width: 45px;
+    min-height: 45px;
+    min-width: 45px;
+    padding: 3px;
+    margin: 10px 10px;
+}
+.menu .profile_border {
+    height: 45px;
+    width: 45px;
+    min-height: 45px;
+    min-width: 45px;
+    padding: 3px;
+    margin: 10px 10px;
+}
+.friends-page .profile_border {
+    height: 45px;
+    width: 45px;
+    min-height: 45px;
+    min-width: 45px;
+    padding: 3px;
+    margin: 10px 10px;
+}
+.article_media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.article {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 30px 10px 30px;
+    width: 97%;
+    font-family: "roboto-mono", monospace;
+    font-size: 1.3em;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px 0px 20px
+}
+.buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    border: none;
+    max-width: 100px;
+    margin: 0px 5% 0px 5%;
+    height: 50%;
+    width: 13%;
+}
+button > img {
+    width: 14vw;
+}
+/* The Overlay (background) */
+.overlay {
+    margin-top: 90px; /* Add a top margin to avoid content overlay */
+    height: 0;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: #1A1A1A;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+/* Position the content inside the overlay */
+.overlay-content {
+    height: 10000px;
+    overflow-y: scroll;
+    position: flex;
+    justify-content: flex-start;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    margin-top: 10px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+.overlay-content form {
+    height: 80%;
+}
+.menu {
+    margin-top: 100px;
+}
+/* The navigation links inside the overlay */
+.overlay a, .overlay h2 {
+    display: flex;
+    align-items: center;
+    font-family: "futura-pt", sans-serif;
+    vertical-align: middle;
+    padding: 8px;
+    font-size: 1em;
+    color: #666666;
+    display: flex;
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay h2:hover {
+    color: #fff;
+}
+.menu .fa {
+    font-size: 2em;
+    margin: 15px;
+}
+.friends-page .fa {
+    font-size: 2em;
+    margin: 15px;
+}
+.field {
+    margin: 10px 20px 10px 20px;
+    padding: 0px 20px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: #222222;
+    border-style: none;
+    color: #FFF;
+    font-family: "lato", sans-serif;
+    font-size: 1em;
+    opacity: .9;
+}
+.article-text {
+    height: 100px;
+}
+.text {
+    width: 30vw;
+}
+.search {
+    width: 100vw;
+}
+.log-in > .text_field {
+    max-width: 500px;
+}
+.input-button  {
+    margin: 0px 0px 10px 0px;
+    width: 100%;
+    max-width: 400px;
+    padding: 0px 20px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: #222222;
+    border-style: none;
+    color: #FFF;
+    font-family: "lato", sans-serif;
+    font-size: 1em;
+    opacity: .9;
+}
+.menu form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.friends-page form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.search_results a {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    margin: 5px 40px;
+}
+.search_results {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.display_none {
+    display: none;
+}
+.visibility_hidden {
+    visibility: hidden;
+}
+/* UPLOAD PAGE */
+
+.upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Style the tab */
+div.tab {
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #222222;
+}
+/* Style the buttons inside the tab */
+div.tab button {
+    color: #fff;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #333;
+}
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #444;
+}
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+textarea {
+    padding: 20px !important;
+}
+.hashtag-icon {
+    width: 20%;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 900px) {
+.overlay h1 {
+    font-size: 1em;
+}
+#upload-header {
+    display: none;
+}
+.overlay-content textarea {
+    height: 50px;
+    padding: 5px;
+}
+.overlay-content form {
+    width: 90vw;
+    height: 20px;
+    margin-top: 120px;
+}
+.overlay-content .search-form {
+    width: 90vw;
+    height: 20px;
+    margin-top: 20px;
+}
+.overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+}
+}
