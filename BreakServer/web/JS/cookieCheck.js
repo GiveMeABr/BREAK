@@ -2,6 +2,7 @@
 /*jshint esversion: 6 */
 
 const logOut = document.querySelector('#logOut');
+const ownUserName = document.querySelector('#own-username');
 
 function getCookie(name) {
 	var dc = document.cookie;
@@ -26,7 +27,7 @@ const cookie = () => {
 
 	if (checkAuth !== null) {
 		let username = getCookie('auth');
-		user_name.innerHTML = 'Hello ' + username;
+		ownUserName.innerHTML = username;
 	} else {
 		alert("Session expired, please re-login");
 		window.location.replace("index.html");
