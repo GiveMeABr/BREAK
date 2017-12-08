@@ -38,7 +38,7 @@
       <button class="upvote"><img src="icons/upvote.png" alt="upvote"></button>
       <button class="downvote"><img src="icons/downvote.png" alt="downvote"></button>
       <button class="like"><img src="icons/like.png" alt="like"></button>
-      <button class="comment"><img src="icons/comment.png" alt="comment"></button>
+      <button class="comment-btn"><img src="icons/comment.png" alt="comment"></button>
     </div>
   </article>
   
@@ -60,7 +60,7 @@
       <button class="upvote"><img src="icons/upvote.png" alt="upvote"></button>
       <button class="downvote"><img src="icons/downvote.png" alt="downvote"></button>
       <button class="like"><img src="icons/like.png" alt="like"></button>
-      <button class="comment"><img src="icons/comment.png" alt="comment"></button>
+      <button class="comment-btn"><img src="icons/comment.png" alt="comment"></button>
     </div>
   </article>
   
@@ -82,7 +82,7 @@
       <button class="upvote"><img src="icons/upvote.png" alt="upvote"></button>
       <button class="downvote"><img src="icons/downvote.png" alt="downvote"></button>
       <button class="like"><img src="icons/like.png" alt="like"></button>
-      <button class="comment"><img src="icons/comment.png" alt="comment"></button>
+      <button class="comment-btn"><img src="icons/comment.png" alt="comment"></button>
     </div>
   </article>
 </main>
@@ -91,9 +91,15 @@
 <div id="myNav" class="overlay menu"> 
   <!-- Menu content -->
   <div class="overlay-content">
+	  <header class="profile-signout">
+		  <div class="pic-usrname">
+		  <div class="profile_border">
+			  <div class="cropper"><img src="img/bekir-donmez-372498.jpg" alt="profile" class="profile"></div> </div><a href="#">OwnProfile69</a></div><a href="#">Sign out</a>
+	  </header>
     <form class="search-form">
       <i class="fa fa-search" aria-hidden="true"></i>
       <input class="search field" type="search" placeholder="">
+		<input type="checkbox" name="nsfw"> NSFW
     </form>
     <ul class="search_results">
       
@@ -124,7 +130,7 @@
         <p>Lorem Ipsum dolor sit amet</p>
       </div>
     </header>
-    <div>
+    <div class="upload-tabs">
       <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'Media')">
         MEDIA

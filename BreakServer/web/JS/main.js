@@ -53,7 +53,44 @@ const closeUploadi =()=> {
 
 };
 
+
 closeMenu.addEventListener('click', closeNav);
 openMenu.addEventListener('click', openNav);
 openUpload.addEventListener('click', openUploadi);
 closeUpload.addEventListener('click', closeUploadi);
+
+
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin === -1) {
+        begin = dc.indexOf(prefix);
+        if (begin !== 0)return null;
+    }
+    else
+    {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end === -1) {
+        end = dc.length;
+        }
+    }
+    return decodeURI(dc.substring(begin + prefix.length, end));
+} 
+
+const cookie = () => {
+    
+  let checkAuth = getCookie("auth");
+
+  if (checkAuth !== null) {
+    let username = getCookie('auth');
+    user_name.innerHTML = 'Hello ' + username;
+  } else {
+      alert("Session expired, please re-login");
+      window.location.replace("index.html");
+  }
+};
+
+document.onload = cookie();
+
