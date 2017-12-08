@@ -10,7 +10,6 @@ const openUpload = document.querySelector('#open_upload');
 const closeUpload = document.querySelector('#close_upload');
 const myNav = document.querySelector('#myNav');
 const upload = document.querySelector('#upload');
-const logOut = document.querySelector('#logOut');
 
 const changeTab = () => {
 	hotTab.classList.toggle('active');
@@ -54,48 +53,12 @@ const closeUploadi = () => {
 
 };
 
-function getCookie(name) {
-	var dc = document.cookie;
-	var prefix = name + "=";
-	var begin = dc.indexOf("; " + prefix);
-	if (begin === -1) {
-		begin = dc.indexOf(prefix);
-		if (begin !== 0) return null;
-	} else {
-		begin += 2;
-		var end = document.cookie.indexOf(";", begin);
-		if (end === -1) {
-			end = dc.length;
-		}
-	}
-	return decodeURI(dc.substring(begin + prefix.length, end));
-}
 
-const cookie = () => {
-
-	let checkAuth = getCookie("auth");
-
-	if (checkAuth !== null) {
-		let username = getCookie('auth');
-		user_name.innerHTML = 'Hello ' + username;
-	} else {
-		alert("Session expired, please re-login");
-		window.location.replace("index.html");
-	}
-};
-
-const deleteCookie = (name) => {
-	document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-};
-
-
-document.onload = cookie();
 
 closeMenu.addEventListener('click', closeNav);
 openMenu.addEventListener('click', openNav);
 openUpload.addEventListener('click', openUploadi);
 closeUpload.addEventListener('click', closeUploadi);
-logOut.addEventListener('click', deleteCookie('auth'));
 
 
 
