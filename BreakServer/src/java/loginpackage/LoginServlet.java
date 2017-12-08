@@ -1,39 +1,55 @@
 package loginpackage;
 
+import controller.DbConnect;
 import java.io.*;
 import javax.servlet.http.*;
 import javax.servlet.*;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
  
 /**
  * Servlet implementation class MySQLConnect
  */
-public class LoginServlet extends HttpServlet {
- 
-    private static final long serialVersionUID = 1L;
- 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        String user = request.getParameter("user");
-        String pass = request.getParameter("pass");
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://10.114.34.142:3306/break", "break", "breakdance");
-            PreparedStatement pst = conn.prepareStatement("SELECT user, pass FROM Users where user=Username and pass=UserSecretCode");
+
+    public class LoginServlet extends HttpServlet {
+         
+    //private static final long serialVersionUID = 1L;
+    
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        response.setContentType("text/html;charset=UTF-8");
+        
+        try(PrintWriter out = response.getWriter()){
+           
+        String user = request.getParameter("text");
+        String pass = request.getParameter("password");
+        
+        Cookie ck = new Cookie("auth", user);
+        ck.setMaxAge(600);
+        
+        DbConnect dbCon = new DbConnect();
+        Connection connect = dbCon.getCon();
+        
+            PreparedStatement pst = connect.prepareStatement
+        ("SELECT Username, UserSecretCode FROM break.Users where Username=? and UserSecretCode=?");
+            
             pst.setString(1, user);
             pst.setString(2, pass);
+            
             ResultSet rs = pst.executeQuery();
+            
             if (rs.next()) {
-                out.println("<p>Welcome!</p>");
-            } 
-            else {
-                out.println("Incorrect login credentials");
+                response.addCookie(ck);
+                response.sendRedirect("index.html");
+            } else {
+                RequestDispatcher rd = request.getRequestDispatcher("login.html");
+                rd.include(request, response);
             }
-        } 
-        catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+            } catch (SQLException ex) {
+                
+            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
