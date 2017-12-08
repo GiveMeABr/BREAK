@@ -32,7 +32,8 @@ const markupImg = `
     </div>
     <div class="article_media"> <img src="${article.img}" class="article">
     </div>
-    <div class="buttons"> <button class="upvote"><img src="icons/upvote.png"></button> <button class="downvote"><img src="icons/downvote.png"></button> <button class="like"><img src="icons/like.png"></button><button class="comment"><img src="icons/comment.png"></button> </div>
+    <div class="buttons"> <button class="upvote"><img src="icons/upvote.png"></button> <button class="downvote"><img src="icons/downvote.png"></button> <button class="like"><img src="icons/like.png"><button class="comment-btn"><img src="icons/comment.png" alt="comment"></button>
+ </div>
   </article>
 `;
 
@@ -53,7 +54,8 @@ const markupTxt = `
     <div class="article_media">
       <p class="article">${article.text}</p>
     </div>
-    <div class="buttons"> <button class="upvote"><img src="icons/upvote.png"></button> <button class="downvote"><img src="icons/downvote.png"></button> <button class="like"><img src="icons/like.png"></button><button class="comment"><img src="icons/comment.png"></button> </div>
+    <div class="buttons"> <button class="upvote"><img src="icons/upvote.png"></button> <button class="downvote"><img src="icons/downvote.png"></button> <button class="like"><img src="icons/like.png"><button class="comment-btn"><img src="icons/comment.png" alt="comment"></button>
+ </div>
   </article>
 `;
 
