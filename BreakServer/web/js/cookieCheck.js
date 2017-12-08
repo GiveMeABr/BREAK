@@ -34,10 +34,6 @@ const cookie = () => {
 	}
 };
 
-const deleteCookie = (name) => {
-	document.cookie = name + document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-};
-
 
 document.onload = cookie();
 logOut.addEventListener('click', deleteCookie('auth'));
