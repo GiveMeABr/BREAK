@@ -15,6 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import model.Users;
 import model.Article;
+import model.Tags;
 import model.Votes;
 /**
  *
@@ -61,6 +62,11 @@ public class DbController {
     public Article insertArticle(Article a) {
         em.persist(a);
         return a;
+    }
+    
+    public Tags insertTags(Tags t) {
+        em.persist(t);
+        return t;
     }
 
     // Add business logic below. (Right-click in editor and choose

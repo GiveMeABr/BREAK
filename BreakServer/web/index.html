@@ -141,8 +141,8 @@
       </div>
     </div>
     <div id="Media" class="tabcontent">
-      <form class="article_upload">
-        <input class="input-button" type="file">
+      <form class="article_upload" method="post" enctype="multipart/form-data" action="upload">
+        <input class="input-button" type="file" name="fileup" id="fileinput" accept="image/*">
 		  <h1>Title</h1>
         <input class="text field" type="text" name="title">
 		  <h1>Tags</h1>
@@ -151,11 +151,11 @@
       </form>
     </div>
     <div id="Text" class="tabcontent textpost-content">
-      <form class="article_upload">
+      <form class="article_upload" method="post" action="webresources/service/articles">
 		  <h1>Title</h1>
         <input class="text field" type="text" name="title">
 		  <h1>Whats on your mind?</h1>
-		  <textarea class="text field article-text" rows="10" cols="30" name="title"></textarea>
+		  <textarea class="text field article-text" rows="10" cols="30" name="article"></textarea>
 		  <h1>Tags</h1>
         <input class="text field" type="text" name="tags" placeholder="Separate tags with a comma">
 		  <input type="submit">

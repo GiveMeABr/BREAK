@@ -56,6 +56,8 @@ public class Article implements Serializable {
     private String article;
     @Column(name = "NSFW")
     private Boolean nsfw;
+     @Column(name = "hasMedia")
+    private Boolean hasMedia;
     @JoinColumn(name = "Sender", referencedColumnName = "UserID")
     @ManyToOne
     private Users sender;
@@ -109,6 +111,14 @@ public class Article implements Serializable {
 
     public void setNsfw(Boolean nsfw) {
         this.nsfw = nsfw;
+    }
+    
+    public Boolean getHasMedia() {
+        return hasMedia;
+    }
+
+    public void setHasMedia(Boolean hasMedia) {
+        this.hasMedia = hasMedia;
     }
 
     public Users getSender() {

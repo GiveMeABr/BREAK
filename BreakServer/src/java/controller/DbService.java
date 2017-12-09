@@ -21,6 +21,7 @@ import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import model.Users;
 import model.Article;
+import model.Tags;
 import model.Votes;
 
 /**
@@ -111,19 +112,26 @@ public class DbService {
     @Path("articles")
     public Article postArticle(
             @FormParam("title") String title,
-            @FormParam("article") String article,
-            @FormParam("nsfw") boolean nsfw) {
-        Article a = new Article();
+            @FormParam("article") String article){
 
-        //DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        //Date date = new Date();
-        a.setArticle(article);
+        Article a = new Article();
+        
         a.setTitle(title);
-        //a.setUploadDate(date);
-        a.setNsfw(nsfw);
+        a.setArticle(article);
+        a.setNsfw(false);
+        a.setHasMedia(false);
         //a.setSender(???);
         return dbc.insertArticle(a);
+        
     }
+    
+     public Tags postTags(
+             @FormParam("tags") String tags) {
+         
+         Tags t = new Tags();
+         t.setTag(tags);
+         return dbc.insertTags(t);
+     }
 
     public String srcAddr;
 

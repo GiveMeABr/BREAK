@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Article;
+import model.Tags;
 
 
 /**
@@ -59,21 +60,29 @@ public class FileUpload extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             request.getPart("fileup").write(request.getPart("fileup").getSubmittedFileName());
             out.print("{\"src\" : \"//10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName() +"\"}");
-            String imgSrc = "10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName();
             
+            String imgSrc = "10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName();
             boolean nsfw = request.getParameter( "nsfw" ) != null;
             
-            //request.getCookies()
-             
-            
+            //String sender = request.getCookies().toString();
             Article a = new Article();
+            Tags t = new Tags();
             
             a.setArticle(imgSrc);
             a.setTitle(request.getParameter("title"));
-            //a.setSender();
-            a.setNsfw(nsfw);
+            a.setNsfw(false);
+            a.setHasMedia(true);
+            //a.setSender(sender);
+            t.setTag(request.getParameter("tags"));
+
             //a.setUploadDate(uploadDate);
+            
             dbc.insertArticle(a);
+            dbc.insertTags(t);
+            response.setHeader("Refresh", "0; URL=" + request.getContextPath());
+            
+            
+            
         
         }
         
