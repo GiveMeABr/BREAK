@@ -75,6 +75,10 @@ public class Users implements Serializable {
     public String getUsername() {
         return username;
     }
+    
+    public String getCertainUsername(String u) {
+        return username;
+    }
 
     public void setUsername(String username) {
         this.username = username;

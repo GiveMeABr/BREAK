@@ -5,6 +5,7 @@
  */
 package controller;
 
+import com.google.gson.Gson;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -47,7 +48,13 @@ public class DbController {
     }
     
     public List<Article> getMedia(){
-            return em.createQuery("SELECT a.articleID, a.article, a.title FROM Article a").getResultList();
+       List<Article> lst = em.createNamedQuery("Article.findByMedia").getResultList();
+       return lst;
+    }
+    
+    public String getMediaJson(){
+        String json = new Gson().toJson(getAllArticle());
+        return json;
     }
     
     public List<Votes> getVotes(){

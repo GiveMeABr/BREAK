@@ -33,7 +33,4 @@ const cookie = () => {
 		window.location.replace("index.html");
 	}
 };
-
-
-document.onload = cookie();
-logOut.addEventListener('click', deleteCookie('auth'));
+// window.onload = cookie();

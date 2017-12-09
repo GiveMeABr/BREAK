@@ -5,9 +5,11 @@
  */
 package controller;
 
+import com.google.gson.Gson;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.EJB;
@@ -48,24 +50,32 @@ public class DbService {
      *
      * @return an instance of java.lang.String
      */
-    @GET
+
     @Produces(MediaType.APPLICATION_JSON)
     public List<Users> getJson() {
         return dbc.getAll();
     }
+    
+
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Article> getJsonArticle() {
+        return dbc.getMedia();
+    }
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
     @Path("getMedia")
-    public List<Article> getJsonArticle() {
-        return dbc.getMedia(); 
+    public String json() {
+        return dbc.getMediaJson();
+
+        
+        
     }
-    
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("getVotes")
     public List<Votes> getJsonVotes() {
-        return dbc.getVotes(); 
+        return dbc.getVotes();
     }
 
     @POST
@@ -112,26 +122,26 @@ public class DbService {
     @Path("articles")
     public Article postArticle(
             @FormParam("title") String title,
-            @FormParam("article") String article){
+            @FormParam("article") String article) {
 
         Article a = new Article();
-        
+
         a.setTitle(title);
         a.setArticle(article);
         a.setNsfw(false);
         a.setHasMedia(false);
         //a.setSender(???);
         return dbc.insertArticle(a);
-        
+
     }
-    
-     public Tags postTags(
-             @FormParam("tags") String tags) {
-         
-         Tags t = new Tags();
-         t.setTag(tags);
-         return dbc.insertTags(t);
-     }
+
+    public Tags postTags(
+            @FormParam("tags") String tags) {
+
+        Tags t = new Tags();
+        t.setTag(tags);
+        return dbc.insertTags(t);
+    }
 
     public String srcAddr;
 

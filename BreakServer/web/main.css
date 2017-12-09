@@ -5,6 +5,8 @@ body {
     width: 100%;
     margin: 0px;
     overflow-x: hidden;
+    font-family: "lato", sans-serif;
+	
 }
 #login-body {
     display: flex;
@@ -127,8 +129,9 @@ ul {
     opacity: 0.2;
 }
 .article_upload {
+	height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
@@ -357,6 +360,9 @@ article h2 {
 .menu .profile {
     width: 100%;
 }
+.pic-usrname{
+	display: flex;
+}
 .profile_border {
     display: flex;
     justify-content: center;
@@ -374,6 +380,11 @@ article h2 {
     max-width: 20vw;
     padding: 0.3vw;
     margin: 1vw 10vw 1vw 10vw;
+}
+.profile-signout {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 50px;
 }
 .article_top .profile_border {
     height: 45px;
@@ -447,6 +458,10 @@ button > img {
     overflow-y: scroll;
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
+
+.search-form {
+	margin-top: 40px;
+}
 /* Position the content inside the overlay */
 .overlay-content {
     height: 10000px;
@@ -457,9 +472,7 @@ button > img {
     width: 100%; /* 100% width */
     margin-top: 10px; /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
-.overlay-content form {
-    height: 80%;
-}
+
 .menu {
     margin-top: 100px;
 }
@@ -472,7 +485,6 @@ button > img {
     padding: 8px;
     font-size: 1em;
     color: #666666;
-    display: flex;
     transition: 0.3s; /* Transition effects on hover (color) */
 }
 /* When you mouse over the navigation links, change their color */
@@ -503,10 +515,11 @@ button > img {
     height: 100px;
 }
 .text {
+	min-width: 200px;
     width: 30vw;
 }
 .search {
-    width: 100vw;
+    width: 80vw;
 }
 .log-in > .text_field {
     max-width: 500px;
@@ -601,6 +614,7 @@ textarea {
     width: 20%;
 }
 
+
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 900px) {
 .overlay h1 {
@@ -609,19 +623,19 @@ textarea {
 #upload-header {
     display: none;
 }
+
 .overlay-content textarea {
     height: 50px;
     padding: 5px;
 }
 .overlay-content form {
-    width: 90vw;
-    height: 20px;
-    margin-top: 120px;
+	height: 100%;
+    width: 100%;
 }
 .overlay-content .search-form {
     width: 90vw;
     height: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .overlay .closebtn {
     font-size: 40px;

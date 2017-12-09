@@ -9,14 +9,17 @@ import controller.DbController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
+import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Article;
 import model.Tags;
+import model.Users;
 
 
 /**
@@ -29,6 +32,7 @@ public class FileUpload extends HttpServlet {
     
     @EJB
     private DbController dbc;
+    private EntityManager em;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -64,7 +68,21 @@ public class FileUpload extends HttpServlet {
             String imgSrc = "10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName();
             boolean nsfw = request.getParameter( "nsfw" ) != null;
             
-            //String sender = request.getCookies().toString();
+            String sender;
+            Users u = new Users();
+            
+            /*
+            Cookie cookies[] = request.getCookies();
+            for(Cookie c : cookies){
+                if(c.getName().equals("auth")){
+                    sender = c.getValue();
+                    u.setUsername(sender);
+                }else{
+                    u.setUsername("paskea");
+                }
+                
+            }*/
+            
             Article a = new Article();
             Tags t = new Tags();
             
@@ -72,13 +90,13 @@ public class FileUpload extends HttpServlet {
             a.setTitle(request.getParameter("title"));
             a.setNsfw(false);
             a.setHasMedia(true);
-            //a.setSender(sender);
+            //a.setSender(u);
             t.setTag(request.getParameter("tags"));
 
             //a.setUploadDate(uploadDate);
             
             dbc.insertArticle(a);
-            dbc.insertTags(t);
+            //dbc.insertTags(t);
             response.setHeader("Refresh", "0; URL=" + request.getContextPath());
             
             
