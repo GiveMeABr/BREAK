@@ -5,13 +5,21 @@
  */
 package fileupload;
 
+import controller.DbConnect;
 import controller.DbController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -67,13 +75,32 @@ public class UserRegister extends HttpServlet {
             out.print(" " + userName + " " + passwd + " " + email);
 
             Users u = new Users();
+            Cookie ck = new Cookie("auth", userName);
+            ck.setMaxAge(600);
 
-            u.setUsername(userName);
-            u.setEmail(email);
-            u.setUserSecretCode(passwd);
-            u.setProfilePic(imgSrc);
+            DbConnect dbCon = new DbConnect();
+            Connection connect = dbCon.getCon();
 
-            dbc.insert(u);
+            java.sql.Statement stmt = connect.createStatement();
+            String SQL = "SELECT * FROM break.Users WHERE Username='" + userName + "'";
+            ResultSet rs = stmt.executeQuery(SQL);
+
+            if (rs.next()) {
+                response.sendRedirect("register.html");
+
+            } else {
+
+                u.setUsername(userName);
+                u.setEmail(email);
+                u.setUserSecretCode(passwd);
+                u.setProfilePic(imgSrc);
+                dbc.insert(u);
+
+                response.addCookie(ck);
+                response.sendRedirect("index.html");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserRegister.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

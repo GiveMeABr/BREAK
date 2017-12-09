@@ -8,6 +8,7 @@ package controller;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.FormParam;
@@ -20,6 +21,7 @@ import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import model.Users;
 import model.Article;
+import model.Votes;
 
 /**
  * REST Web Service
@@ -51,8 +53,18 @@ public class DbService {
         return dbc.getAll();
     }
 
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("getMedia")
     public List<Article> getJsonArticle() {
-        return dbc.getAllArticle();
+        return dbc.getMedia(); 
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("getVotes")
+    public List<Votes> getJsonVotes() {
+        return dbc.getVotes(); 
     }
 
     @POST
@@ -112,7 +124,7 @@ public class DbService {
         //a.setSender(???);
         return dbc.insertArticle(a);
     }
-    
+
     public String srcAddr;
 
     @POST

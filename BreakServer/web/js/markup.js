@@ -66,6 +66,42 @@ const markupComment = `
 `;
 */
 
+
+
+// GET
+const getJson = (responseServlet) => {
+	fetch(responseServlet)
+		.then((response) => {
+			return response.json();
+		})
+		.then((result) => {
+			console.log(result);
+		});
+};
+
+// JSON.parse(getJson(jsonSerlvet));
+
+const markupFeed = (jsonSerlvet) => {
+	
+	const json = getJson(jsonSerlvet);
+	
+	for (var i = 0; i < json.length; i++) {
+
+		article = {
+			user: 'json[i].user',
+			title: 'json[i].title',
+			article: 'json[i].article',
+			hasMedia: 'json[i].hasMedia'
+		};
+
+		if (article.hasMedia === 1) {
+			document.querySelector("main").innerHTML += markupImg;
+		} else {
+			document.querySelector("main").innerHTML += markupTxt;
+		}
+	}
+};
+
 const markupImg = `
   <!-- MEDIA ARTICLE -->
   <article>
@@ -126,40 +162,6 @@ const markupComment = `
 	</footer>
   </article>
 `;
-
-// GET
-const getJson = (responseServlet) => {
-	fetch(responseServlet)
-		.then((response) => {
-			return response.json();
-		})
-		.then((result) => {
-			console.log(result);
-		});
-};
-
-// JSON.parse(getJson(jsonSerlvet));
-
-const markupFeed = (jsonSerlvet) => {
-	
-	const json = getJson(jsonSerlvet);
-	
-	for (var i = 0; i < json.length; i++) {
-
-		article = {
-			user: json[i].user,
-			title: json[i].title,
-			article: json[i].article,
-			hasMedia: json[i].hasMedia
-		};
-
-		if (article.hasMedia === 1) {
-			document.querySelector("main").innerHTML += markupImg;
-		} else {
-			document.querySelector("main").innerHTML += markupTxt;
-		}
-	}
-};
 
 document.onload.markupFeed('http://10.114.34.142:8080/BreakServer/webresources/service/getAllMedia?');
 document.querySelector(".comments-container").innerHTML += markupComment;

@@ -5,12 +5,17 @@
  */
 package controller;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import model.Users;
 import model.Article;
+import model.Votes;
 /**
  *
  * @author Eero
@@ -38,6 +43,14 @@ public class DbController {
     public List<Article> getAllArticle(){
        List<Article> lst = em.createNamedQuery("Article.findAll").getResultList(); 
        return lst;
+    }
+    
+    public List<Article> getMedia(){
+            return em.createQuery("SELECT a.articleID, a.article, a.title FROM Article a").getResultList();
+    }
+    
+    public List<Votes> getVotes(){
+            return em.createQuery("SELECT v.votesPK.article, v.voteType FROM Votes v").getResultList();
     }
     
     public Users insert(Users u) {

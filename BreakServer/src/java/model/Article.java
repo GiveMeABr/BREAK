@@ -67,6 +67,10 @@ public class Article implements Serializable {
         this.articleID = articleID;
     }
 
+    public Article(int i, String str) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Integer getArticleID() {
         return articleID;
     }
