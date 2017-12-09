@@ -84,10 +84,7 @@ const markupFeed = (jsonServlet) => {
 					console.log("CREATING TEXT TING");
 					document.querySelector("main").innerHTML += markupTxt;
 				}
-
-
 			}
-
 		});
 };
 
