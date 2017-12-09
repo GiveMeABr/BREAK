@@ -39,5 +39,4 @@ const deleteCookie = (name) => {
 };
 
 
-document.onload = cookie();
-logOut.addEventListener('click', deleteCookie('auth'));
+// window.onload = cookie();

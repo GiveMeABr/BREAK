@@ -65,10 +65,10 @@ const markupComment = `
   </article>
 `;
 */
-
+/*
 const markupImg = `
   <!-- MEDIA ARTICLE -->
-  <article>
+  <article id="postId-${article.ID}">
     <div class="article_top">
       <header>
 		<div class="profile_border">
@@ -89,8 +89,8 @@ const markupImg = `
 
 const markupTxt = `
 <!-- TEXT ARTICLE -->
- <article>
-    <div class="article_top">
+<article id="postId-${article.ID}">
+	<div class="article_top">
       <header>
 		<div class="profile_border">
 			<div class="cropper">
@@ -125,7 +125,7 @@ const markupComment = `
 		<h2>VOTES</h2>
 	</footer>
   </article>
-`;
+`;*/
 
 // GET
 const getJson = (responseServlet) => {
@@ -137,6 +137,8 @@ const getJson = (responseServlet) => {
 			console.log(result);
 		});
 };
+
+window.onload.getJson('test.json');
 
 // JSON.parse(getJson(jsonSerlvet));
 
@@ -161,5 +163,5 @@ const markupFeed = (jsonSerlvet) => {
 	}
 };
 
-document.onload.markupFeed('http://10.114.34.142:8080/BreakServer/webresources/service/getAllMedia?');
+// window.onload.markupFeed('test.json');
 document.querySelector(".comments-container").innerHTML += markupComment;
