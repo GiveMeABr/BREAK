@@ -420,7 +420,9 @@ article h2 {
     align-items: center;
     justify-content: flex-start;
     margin: 10px 30px 10px 30px;
-    width: 97%;
+    width: auto;
+	max-width: 97%;
+	max-height: 530px;
     font-family: "roboto-mono", monospace;
     font-size: 1.3em;
 }
