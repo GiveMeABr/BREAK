@@ -18,59 +18,58 @@ import model.Users;
 import model.Article;
 import model.Tags;
 import model.Votes;
+import java.lang.reflect.Type;
+import com.google.gson.reflect.TypeToken;
+
 /**
  *
  * @author Eero
  */
 @Stateless
 public class DbController {
-    
+
     @PersistenceContext
     private EntityManager em;
-    
-    public DbController (){
-        
+
+    public DbController() {
+
     }
-    
-    public List<Users> getAll(){
-       List<Users> lst = em.createNamedQuery("Users.findAll").getResultList(); 
-       return lst;
+
+    public List<Users> getAll() {
+        List<Users> lst = em.createNamedQuery("Users.findAll").getResultList();
+        return lst;
     }
-    
-    public List<Users> getUsername(){
-       List<Users> lst = em.createNamedQuery("Users.findByUsername").getResultList(); 
-       return lst;
+
+    public List<Users> getUsername() {
+        List<Users> lst = em.createNamedQuery("Users.findByUsername").getResultList();
+        return lst;
     }
-    
-    public List<Article> getAllArticle(){
-       List<Article> lst = em.createNamedQuery("Article.findAll").getResultList(); 
-       return lst;
+
+    public List<Article> getAllArticle() {
+        List<Article> lst = em.createNamedQuery("Article.findAll").getResultList();
+        return lst;
     }
-    
-    public List<Article> getMedia(){
-       List<Article> lst = em.createNamedQuery("Article.findByMedia").getResultList();
-       return lst;
+
+    public List<Article> getMedia() {
+        List<Article> lst = em.createNamedQuery("Article.findByMedia").getResultList();
+        return lst;
     }
-    
-    public String getMediaJson(){
+
+    public String getMediaJson() {
         String json = new Gson().toJson(getAllArticle());
         return json;
     }
-    
-    public List<Votes> getVotes(){
-            return em.createQuery("SELECT v.votesPK.article, v.voteType FROM Votes v").getResultList();
-    }
-    
+
     public Users insert(Users u) {
         em.persist(u);
         return u;
     }
-    
+
     public Article insertArticle(Article a) {
         em.persist(a);
         return a;
     }
-    
+
     public Tags insertTags(Tags t) {
         em.persist(t);
         return t;

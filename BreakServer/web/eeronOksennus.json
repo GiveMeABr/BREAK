@@ -1,0 +1,215 @@
+[{
+    "articleID": 4,
+    "uploadDate": "Nov 30, 2017 1:30:00 PM",
+    "title": "HAUSKA KOIRAKUVA",
+    "article": "http://10.114.34.142/articles/antti_promokuva.png",
+    "nsfw": false,
+    "hasMedia": true,
+    "sender": {
+        "userID": 3,
+        "username": "aikatestaajaAikainen",
+        "email": "aika@aika.test",
+        "modStatus": false,
+        "userSecretCode": "aikis"
+    }
+}, {
+    "articleID": 25,
+    "uploadDate": "Dec 5, 2017 2:07:57 PM",
+    "title": "Paskea",
+    "article": "http://10.114.34.142/articles/wallhaven-279914.jpg",
+    "nsfw": false,
+    "hasMedia": true,
+    "sender": {
+        "userID": 57,
+        "username": "toinentesti",
+        "email": "t@t.t",
+        "userSecretCode": "testaajapro",
+        "profilePic": "http://10.114.34.142/profilepics/eeroround.png"
+    }
+}, {
+    "articleID": 26,
+    "uploadDate": "Dec 5, 2017 3:01:05 PM",
+    "title": "tisulit",
+    "article": "http://10.114.34.142/articles/tissikuva.png",
+    "hasMedia": true,
+    "sender": {
+        "userID": 5,
+        "username": "testaus",
+        "email": "sdmfsdl",
+        "modStatus": false,
+        "userSecretCode": "123"
+    }
+}, {
+    "articleID": 27,
+    "uploadDate": "Dec 5, 2017 3:10:44 PM",
+    "title": "suklaatissit",
+    "article": "http://10.114.34.142/articles/suklaatissikuva.png",
+    "nsfw": true,
+    "hasMedia": true,
+    "sender": {
+        "userID": 27,
+        "username": "nytsaleeskulaa",
+        "email": "",
+        "modStatus": false,
+        "userSecretCode": ""
+    }
+}, {
+    "articleID": 28,
+    "uploadDate": "Dec 5, 2017 3:30:13 PM",
+    "title": "hyvaUX",
+    "article": "http://10.114.34.142/articles/20170830_112342.jpg",
+    "nsfw": false,
+    "hasMedia": true,
+    "sender": {
+        "userID": 11,
+        "username": "ererer",
+        "email": "erer",
+        "modStatus": false,
+        "userSecretCode": "ererer"
+    }
+}, {
+    "articleID": 29,
+    "uploadDate": "Dec 5, 2017 3:33:21 PM",
+    "title": "joo",
+    "article": "http://10.114.34.142/articles/usability3.jpg",
+    "nsfw": false,
+    "hasMedia": true,
+    "sender": {
+        "userID": 28,
+        "username": "wat",
+        "email": "wat",
+        "modStatus": false,
+        "userSecretCode": "wat"
+    }
+}, {
+    "articleID": 30,
+    "uploadDate": "Dec 5, 2017 3:34:59 PM",
+    "article": "http://10.114.34.142/articles/20170830_110233.jpg",
+    "hasMedia": true,
+    "sender": {
+        "userID": 17,
+        "username": "o__O",
+        "email": "",
+        "modStatus": false,
+        "userSecretCode": ""
+    }
+}, {
+    "articleID": 31,
+    "uploadDate": "Dec 5, 2017 3:35:50 PM",
+    "title": "hubaababba",
+    "article": "http://10.114.34.142/articles/20170830_112244.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 32,
+    "uploadDate": "Dec 7, 2017 12:53:38 PM",
+    "title": "imac pro wallapper",
+    "article": "http://10.114.34.142/articles/iMac-Pro-Wallpaper-2767-x-1556-AR72014.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 33,
+    "uploadDate": "Dec 9, 2017 5:06:56 PM",
+    "title": "JokuTommonenKirka",
+    "article": "http://10.114.34.142/articles/kirkasurunpyyhitsilmist_ml.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 34,
+    "uploadDate": "Dec 9, 2017 5:21:08 PM",
+    "title": "Storm trooper",
+    "article": "http://10.114.34.142/articles/wallhaven-300836.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 35,
+    "uploadDate": "Dec 9, 2017 5:36:13 PM",
+    "title": "Lorem",
+    "article": "Lorem ipsum testing vittung mÃ¶rkÃ¶ jafar simeon rÃ¤Ã¤Ã¤Ã¤Ã¤Ã¤Ã¤Ã¤",
+    "nsfw": false,
+    "hasMedia": false
+}, {
+    "articleID": 36,
+    "uploadDate": "Dec 9, 2017 5:42:06 PM",
+    "title": "Oikeasti",
+    "article": "http://10.114.34.142/articles/0011.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 37,
+    "uploadDate": "Dec 9, 2017 5:49:51 PM",
+    "title": "Arttu",
+    "article": "http://10.114.34.142/articles/270px-Arttu_Wiskari.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 38,
+    "uploadDate": "Dec 9, 2017 6:00:41 PM",
+    "title": "Mexican",
+    "article": "http://10.114.34.142/articles/23350-Pancho-Moustache-large.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 39,
+    "uploadDate": "Dec 9, 2017 6:11:13 PM",
+    "title": "TestiArtsi",
+    "article": "Artsi tortsi hartsi kartsi",
+    "nsfw": false,
+    "hasMedia": false
+}, {
+    "articleID": 40,
+    "uploadDate": "Dec 9, 2017 6:32:59 PM",
+    "title": "Keuli",
+    "article": "http://10.114.34.142/articles/1512591_551747568250632_294464065_n.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 41,
+    "uploadDate": "Dec 9, 2017 6:34:10 PM",
+    "title": "yutituyir",
+    "article": "tyuiityu",
+    "nsfw": false,
+    "hasMedia": false
+}, {
+    "articleID": 42,
+    "uploadDate": "Dec 9, 2017 6:40:06 PM",
+    "title": "robo",
+    "article": "http://10.114.34.142/articles/IMG_20170227_135454.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 43,
+    "uploadDate": "Dec 9, 2017 9:04:50 PM",
+    "title": "oikein!",
+    "article": "http://10.114.34.142/articles/1206574733930851359Ryan_Taylor_Green_Tick.svg.hi.png",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 44,
+    "uploadDate": "Dec 9, 2017 9:12:40 PM",
+    "title": "Vladimir Uusipaavalniemi",
+    "article": "http://10.114.34.142/articles/Cg5xNcs7c09a74f9CMEt.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 45,
+    "uploadDate": "Dec 10, 2017 12:40:02 AM",
+    "title": "swap",
+    "article": "http://10.114.34.142/articles/IMG-20150507-WA0004.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 46,
+    "uploadDate": "Dec 10, 2017 1:03:37 AM",
+    "title": "Jorma",
+    "article": "http://10.114.34.142/articles/jorma.jpg",
+    "nsfw": false,
+    "hasMedia": true
+}, {
+    "articleID": 47,
+    "uploadDate": "Dec 10, 2017 2:42:12 PM",
+    "title": "are u workin",
+    "article": "http://10.114.34.142/articles/giphy.gif",
+    "nsfw": false,
+    "hasMedia": true
+}]

@@ -66,17 +66,10 @@ public class DbService {
     @Path("getMedia")
     public String json() {
         return dbc.getMediaJson();
-
-        
-        
+ 
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("getVotes")
-    public List<Votes> getJsonVotes() {
-        return dbc.getVotes();
-    }
+    
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)

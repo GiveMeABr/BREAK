@@ -8,7 +8,6 @@ let article = {
 	article: "",
 	hasMedia: ""
 };
-// let comment;
 
 const markupFeed = (jsonServlet) => {
 
@@ -21,7 +20,7 @@ const markupFeed = (jsonServlet) => {
 		.then((result) => {
 
 			json = result;
-			console.log(json.length);
+			console.log("json length: " + json.length);
 
 			for (var i = 0; i < json.length; i++) {
 
@@ -89,25 +88,4 @@ const markupFeed = (jsonServlet) => {
 };
 
 
-/*
-const markupComment = `
-<!-- Comment -->
-	<article class="comment">
-    <div class="article_top">
-      <header>
-        <div class="profile_border">
-          <div class="cropper"><img src="${comment.profilePic}" class="profile"></div>
-        </div>
-        <h1 class="username">${comment.user}</h1>
-      </header>
-    </div>
-      <p>${comment.commentText}</p>
-	<footer class="comment-footer">
-		<h2>VOTES</h2>
-	</footer>
-  </article>
-`;
-*/
-
-window.onload = markupFeed('test.json');
-// document.querySelector(".comments-container").innerHTML += markupComment;
+window.onload = markupFeed('eeronOksennus.json');
