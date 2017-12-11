@@ -11,48 +11,12 @@
 </head>
 <body>
 <div class="nav_bar">
-  <nav id="primary"> <a id="close_menu" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a> <a id="open_menu"><em  class="fa fa-bars" aria-hidden="true"></em></a> <a id="home-link" href="index.html"><img src="icons/logo_white.png" class="logo" alt="logo"></a> <a id="open_upload"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a></nav>
-  <nav id="tabs"> <a class="tab" id="hot_tab">
-    HOT
-    </a> <a class="tab" id="fresh_tab">
-    FRESH
-    </a> </nav>
+    <nav id="primary"> <div><a href="#" id="own-username">KAKKAPERSE</a><form action="Logout" method ="post"><a id="logOut" href="login.html">Sign out</a></form></div> <a id="home-link" href="index.html"><img src="icons/logo_white.png" class="logo" alt="logo"></a> <a id="open_upload"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a></nav>
 </div>
+    
 <main class="fp-articles"> 
 
 </main>
-
-<!-- The Menu -->
-<div id="myNav" class="overlay menu"> 
-  <!-- Menu content -->
-  <div class="overlay-content">
-	  <header class="profile-signout">
-		  <div class="pic-usrname">
-		  <div class="profile_border">
-			  <div class="cropper"><img src="img/bekir-donmez-372498.jpg" alt="profile" class="profile"></div> </div><a href="#" id="own-username"></a></div><form action="Logout" method ="post"><a id="logOut" href="login.html">Sign out</a></form>
-	  </header>
-    <form class="search-form">
-      <i class="fa fa-search" aria-hidden="true"></i>
-      <input class="search field" type="search" placeholder="">
-		<input type="checkbox" name="nsfw"> NSFW
-    </form>
-    <ul class="search_results">
-      
-      <!-- Search user element -->
-      <li class="search_user"><a href="#">
-        <div class="profile_border">
-          <div class="cropper"><img src="img/bekir-donmez-372498.jpg" alt="profile" class="profile"></div>
-        </div>
-        <h2>LoreMonica01</h2>
-        </a></li>
-      
-      <!-- Search tag element -->
-      <li class="search_user"><a href="#"> <img class="hashtag-icon" alt="#" src="icons/hashtag.png">
-        <h2>LoreMipsum</h2>
-        </a></li>
-    </ul>
-  </div>
-</div>
 
 <!-- Upload -->
 <div id="upload" class="overlay upload"> 
@@ -80,8 +44,11 @@
         <input class="input-button" type="file" name="fileup" accept="image/*">
 		  <h1>Title</h1>
         <input class="text field" type="text" name="title">
-		  <h1>Tags</h1>
-        <input class="text field" type="text" name="tags" placeholder="Separate tags with a comma">
+          
+          <!-- Damage control hidden tags field -->
+		  <h1 class="visibility_hidden">Tags</h1>
+        <input class="text field visibility_hidden" type="text" name="tags" placeholder="Separate tags with a comma">
+          
 		  <input type="submit">
       </form>
     </div>
@@ -91,8 +58,12 @@
         <input class="text field" type="text" name="title">
 		  <h1>Whats on your mind?</h1>
 		  <textarea class="text field article-text" name="article" rows="10" cols="30"></textarea>
-		  <h1>Tags</h1>
-        <input class="text field" type="text" name="tags" placeholder="Separate tags with a comma">
+          
+          <!-- Damage control hidden tags field -->
+		  <h1 class="visibility_hidden">Tags</h1>
+        <input class="text field visibility_hidden" type="text" name="tags" placeholder="Separate tags with a comma">
+          
+          
 		  <input type="submit">
 		</form>
     </div>
