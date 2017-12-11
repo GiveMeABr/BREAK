@@ -57,7 +57,7 @@ form.addEventListener('submit', function(ev){
     
     let hash = hashPass(passField.value);
     let oData = new FormData();
-    console.log(hash);
+    console.log("HASH HERE TOO: " + hash);
     // oData.delete("password");
     const userField = document.querySelector('#username');
     const emailField = document.querySelector('#email');
