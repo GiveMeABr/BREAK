@@ -65,7 +65,7 @@ public class FileUpload extends HttpServlet {
             request.getPart("fileup").write(request.getPart("fileup").getSubmittedFileName());
             out.print("{\"src\" : \"//10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName() +"\"}");
             
-            String imgSrc = "10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName();
+            String imgSrc = "http://10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName();
             boolean nsfw = request.getParameter( "nsfw" ) != null;
             
             String sender;
