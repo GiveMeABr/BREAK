@@ -49,6 +49,11 @@ public class DbController {
         List<Article> lst = em.createNamedQuery("Article.findAll").getResultList();
         return lst;
     }
+    
+    public List<Article> getPaskaEsimerkki(String title) {
+        List<Article> lst = em.createNamedQuery("Article.findByTitle").setParameter("title", title).getResultList();
+        return lst;
+    }
 
     public List<Article> getMedia() {
         List<Article> lst = em.createNamedQuery("Article.findByMedia").getResultList();
@@ -56,7 +61,7 @@ public class DbController {
     }
 
     public String getMediaJson() {
-        String json = new Gson().toJson(getAllArticle());
+        String json = new Gson().toJson(getMedia());
         return json;
     }
 
