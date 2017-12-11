@@ -67,6 +67,9 @@ form > a:hover {
     color: #fff;
     font-size: 1.1em;
 }
+#logOut:hover {
+    font-size: 1em ;
+}
 form > h1 {
     font-size: 1.5em;
     margin-bottom: -1px;
