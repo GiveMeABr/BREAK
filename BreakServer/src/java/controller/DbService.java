@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.ws.rs.CookieParam;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
@@ -70,9 +71,9 @@ public class DbService {
     }
     
     @GET
-    @Path("getPaskaEsimerkki")
-    public String Paskaesimerkki() {
-        return dbc.getMediaJson();
+    @Path("getUserName")
+    public int UserId(@CookieParam("auth") String username) {
+        return dbc.getUser(username);
  
     }
 

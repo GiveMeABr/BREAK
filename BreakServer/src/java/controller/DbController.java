@@ -20,6 +20,7 @@ import model.Tags;
 import model.Votes;
 import java.lang.reflect.Type;
 import com.google.gson.reflect.TypeToken;
+import javax.ws.rs.CookieParam;
 
 /**
  *
@@ -52,6 +53,24 @@ public class DbController {
     
     public List<Article> getPaskaEsimerkki(String title) {
         List<Article> lst = em.createNamedQuery("Article.findByTitle").setParameter("title", title).getResultList();
+        return lst;
+    }
+    
+    
+    
+    public int getUser(String username) {
+        int usr = em.createNamedQuery("Users.findByUsername").setParameter("username", username).getResultList().indexOf(1);
+        return usr;
+    }
+    
+    public Users UserId(String username) {
+        Users u = getUserId(username).get(1);
+        return u;
+    }
+    
+    
+    public List<Users> getUserId(String username) {
+        List<Users> lst = em.createNamedQuery("Users.findByUsername").setParameter("username", username).getResultList();
         return lst;
     }
 

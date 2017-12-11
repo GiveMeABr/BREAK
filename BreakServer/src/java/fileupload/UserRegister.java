@@ -65,9 +65,9 @@ public class UserRegister extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
 
             request.getPart("fileup").write(request.getPart("fileup").getSubmittedFileName());
-            out.print("{\"src\" : \"//10.114.34.142/profilepics/" + request.getPart("fileup").getSubmittedFileName() + "\"}");
+            out.print("{\"src\" : \"http://10.114.34.142/profilepics/" + request.getPart("fileup").getSubmittedFileName() + "\"}");
 
-            String imgSrc = "10.114.34.142/profilepics/" + request.getPart("fileup").getSubmittedFileName();
+            String imgSrc = "http://10.114.34.142/profilepics/" + request.getPart("fileup").getSubmittedFileName();
             String userName = request.getParameter("username");
             String email = request.getParameter("email");
             String passwd = request.getParameter("password");
@@ -94,6 +94,7 @@ public class UserRegister extends HttpServlet {
                 u.setEmail(email);
                 u.setUserSecretCode(passwd);
                 u.setProfilePic(imgSrc);
+                u.setModStatus(false);
                 dbc.insert(u);
 
                 response.addCookie(ck);

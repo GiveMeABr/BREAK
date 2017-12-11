@@ -63,25 +63,21 @@ public class FileUpload extends HttpServlet {
         response.setContentType("application/json");
         try (PrintWriter out = response.getWriter()) {
             request.getPart("fileup").write(request.getPart("fileup").getSubmittedFileName());
-            out.print("{\"src\" : \"//10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName() +"\"}");
+            out.print("{\"src\" : \"http://10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName() +"\"}");
             
             String imgSrc = "http://10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName();
             boolean nsfw = request.getParameter( "nsfw" ) != null;
-            
-            String sender;
+           
             Users u = new Users();
             
-            /*
             Cookie cookies[] = request.getCookies();
-            for(Cookie c : cookies){
-                if(c.getName().equals("auth")){
-                    sender = c.getValue();
-                    u.setUsername(sender);
-                }else{
-                    u.setUsername("paskea");
-                }
-                
-            }*/
+            String username = "";
+            
+            for (int i = 0; i < cookies.length; i++){
+                username = cookies[i].getValue();
+            }
+            
+            u = dbc.UserId(username);
             
             Article a = new Article();
             Tags t = new Tags();
@@ -90,7 +86,7 @@ public class FileUpload extends HttpServlet {
             a.setTitle(request.getParameter("title"));
             a.setNsfw(false);
             a.setHasMedia(true);
-            //a.setSender(u);
+            a.setSender(u);
             t.setTag(request.getParameter("tags"));
 
             //a.setUploadDate(uploadDate);

@@ -33,4 +33,4 @@ const cookie = () => {
 		window.location.replace("index.html");
 	}
 };
-// window.onload = cookie();
+ window.onload = cookie();
