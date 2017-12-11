@@ -57,10 +57,17 @@ form.addEventListener('submit', function(ev){
     console.log("halooo");
     
     let hash = hashPass(passField.value);
-    let oData = new FormData(form);
+    let oData = new FormData();
     console.log(hash);
-    oData.delete("password");
+    // oData.delete("password");
+    const userField = document.querySelector('#username');
+    const emailField = document.querySelector('#email');
+    const profileField = document.querySelector('#profilepic');
+    
     oData.append("password", hash);
+    oData.append("username", userField.value);
+    oData.append("email", emailField.value);
+    oData.append("profilepic", profileField.files[0]);
     console.log("FormData: " + oData);
     
     let oReq = new XMLHttpRequest();
