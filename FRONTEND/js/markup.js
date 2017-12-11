@@ -88,4 +88,4 @@ const markupFeed = (jsonServlet) => {
 };
 
 
-window.onload = markupFeed('eeronOksennus.json');
+window.onload = markupFeed('10.114.34.142:8080/BreakServer/webresources/service/getMedia?');
