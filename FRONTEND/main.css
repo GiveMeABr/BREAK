@@ -63,6 +63,9 @@ form > a {
     text-align: center;
     transition: 0.07s;
 }
+a:hover {
+    cursor: pointer;
+}
 form > a:hover {
     color: #fff;
     font-size: 1.1em;
