@@ -98,4 +98,4 @@ const markupFeed = (jsonServlet) => {
 };
 
 
-window.onload = markupFeed('10.114.34.142:8080/BreakServer/webresources/service/getMedia?');
+window.onload = markupFeed('http://10.114.34.142:8080/BreakServer/webresources/service/getMedia?');
