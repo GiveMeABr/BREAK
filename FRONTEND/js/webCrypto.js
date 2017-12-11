@@ -6,7 +6,6 @@ const convertStringToArrayBufferView = (str) => {
 	for (let iii = 0; iii < str.length; iii++) {
 		bytes[iii] = str.charCodeAt(iii);
 	}
-
 	return bytes;
 };
 
@@ -20,19 +19,16 @@ const convertArrayBufferToHexaDecimal = (buffer) => {
 		if (c.length < 2) {
 			c = '0' + c;
 		}
-
 		hex += c;
 	}
-
 	return hex;
 };
 
 
 const passField = document.querySelector('#password');
 
-const hashPass = () => {
+const hashPass = (pass) => {
 
-	let pass = passField.value;
 	let crypto = window.crypto || window.msCrypto;
 
 	if (crypto.subtle) {
@@ -45,9 +41,31 @@ const hashPass = () => {
 		promise.then(function (result) {
 			const hash_value = convertArrayBufferToHexaDecimal(result);
 			console.log("hash: " + hash_value);
-			passField.value = hash_value;
+			return hash_value;
 		});
 	} else {
 		alert("Cryptography API not Supported");
 	}
 };
+
+
+const form = document.forms.namedItem("form");
+console.log(form);
+
+form.addEventListener('submit', function(ev){
+    
+    console.log("halooo");
+    
+    let hash = hashPass(passField.value);
+    let oData = new FormData(form);
+    oData.delete("password");
+    oData.append("password", hash);
+    console.log("FormData: " + oData);
+    
+    let oReq = new XMLHttpRequest();
+    
+    oReq.send(oData);
+    ev.preventDefault();
+});
+
+console.log("end");
