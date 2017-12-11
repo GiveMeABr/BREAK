@@ -4,7 +4,6 @@
 /*
     This is the "complete" code 
     to hash the users password
-    and to send it to server.
     Shame it doesn't work.
 */
 
@@ -54,7 +53,7 @@ form.addEventListener('submit', function (ev) {
         }, convertStringToArrayBufferView(passwd));
 
         promise.then(function (result) {
-            
+
             const hash_value = convertArrayBufferToHexaDecimal(result);
 
             let oData = new FormData();
@@ -76,7 +75,7 @@ form.addEventListener('submit', function (ev) {
 
             oReq.open('post', 'http://10.114.34.142:8080/BreakServer/webresources/service/users');
             oReq.send(oData);
-            
+
             ev.preventDefault();
         });
     } else {
