@@ -26,6 +26,9 @@ const convertArrayBufferToHexaDecimal = (buffer) => {
 
 
 const passField = document.querySelector('#password');
+const userField = document.querySelector('#username');
+const emailField = document.querySelector('#email');
+const profileField = document.querySelector('#profilepic');
 
 const form = document.forms.namedItem("form");
 console.log(form);
@@ -44,15 +47,11 @@ form.addEventListener('submit', function (ev) {
         }, convertStringToArrayBufferView(passwd));
 
         promise.then(function (result) {
+            
             const hash_value = convertArrayBufferToHexaDecimal(result);
 
             let oData = new FormData();
             let oReq = new XMLHttpRequest();
-
-            // oData.delete("password");
-            const userField = document.querySelector('#username');
-            const emailField = document.querySelector('#email');
-            const profileField = document.querySelector('#profilepic');
 
             console.log("HASH: " + hash_value);
             oData.append("password", hash_value);
@@ -68,10 +67,9 @@ form.addEventListener('submit', function (ev) {
 
             console.log("FormData: " + oData);
 
-
-
             oReq.open('POST', 'http://10.114.34.142:8080/BreakServer/webresources/service/users');
             oReq.send(oData);
+            
             ev.preventDefault();
         });
     } else {
