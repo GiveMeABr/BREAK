@@ -64,6 +64,7 @@ form.addEventListener('submit', function(ev){
     
     let oReq = new XMLHttpRequest();
     
+    oReq.open('POST' ,'http://10.114.34.142:8080/BreakServer/webresources/service/users');
     oReq.send(oData);
     ev.preventDefault();
 });
