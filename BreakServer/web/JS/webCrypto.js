@@ -33,7 +33,7 @@ const passField = document.querySelector('#password');
 const hashPass = () => {
 
 	let pass = passField.value;
-	const crypto = window.crypto || window.msCrypto;
+	let crypto = window.crypto || window.msCrypto;
 
 	if (crypto.subtle) {
 		alert("Cryptography API Supported");
