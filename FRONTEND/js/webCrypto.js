@@ -1,6 +1,13 @@
 'use strict';
 /*jshint esversion: 6 */
 
+/*
+    This is the "complete" code 
+    to hash the users password
+    and to send it to server.
+    Shame it doesn't work.
+*/
+
 const convertStringToArrayBufferView = (str) => {
     let bytes = new Uint8Array(str.length);
     for (let iii = 0; iii < str.length; iii++) {
