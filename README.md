@@ -6,6 +6,6 @@ This is the home of the most revolutionary and fresh social mediasharing service
 Just go to the website and get started, once we have one.
 
 ## Authors
-** Mikael Ahlström **
-** Eero Karvonen **
-** Antti Nyman **
+**Mikael Ahlström**
+**Eero Karvonen**
+**Antti Nyman**
