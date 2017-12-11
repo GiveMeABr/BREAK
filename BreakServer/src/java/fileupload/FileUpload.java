@@ -68,7 +68,7 @@ public class FileUpload extends HttpServlet {
             String imgSrc = "http://10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName();
             boolean nsfw = request.getParameter( "nsfw" ) != null;
            
-            Users u = new Users();
+            /*Users u = new Users();
             
             Cookie cookies[] = request.getCookies();
             String username = "";
@@ -78,7 +78,7 @@ public class FileUpload extends HttpServlet {
             }
             
             u = dbc.UserId(username);
-            
+            */
             Article a = new Article();
             Tags t = new Tags();
             
@@ -86,7 +86,7 @@ public class FileUpload extends HttpServlet {
             a.setTitle(request.getParameter("title"));
             a.setNsfw(false);
             a.setHasMedia(true);
-            a.setSender(u);
+            //a.setSender(u);
             t.setTag(request.getParameter("tags"));
 
             //a.setUploadDate(uploadDate);
