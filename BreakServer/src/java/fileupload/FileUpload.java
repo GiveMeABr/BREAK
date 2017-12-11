@@ -21,7 +21,6 @@ import model.Article;
 import model.Tags;
 import model.Users;
 
-
 /**
  *
  * @author nyman
@@ -29,7 +28,7 @@ import model.Users;
 @MultipartConfig(location = "/var/www/html/articles")
 @WebServlet(name = "fileUpload", urlPatterns = {"/upload"})
 public class FileUpload extends HttpServlet {
-    
+
     @EJB
     private DbController dbc;
     private EntityManager em;
@@ -58,16 +57,16 @@ public class FileUpload extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response
-            )
+    )
             throws ServletException, IOException {
         response.setContentType("application/json");
         try (PrintWriter out = response.getWriter()) {
             request.getPart("fileup").write(request.getPart("fileup").getSubmittedFileName());
-            out.print("{\"src\" : \"http://10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName() +"\"}");
-            
+            out.print("{\"src\" : \"http://10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName() + "\"}");
+
             String imgSrc = "http://10.114.34.142/articles/" + request.getPart("fileup").getSubmittedFileName();
-            boolean nsfw = request.getParameter( "nsfw" ) != null;
-           
+            boolean nsfw = request.getParameter("nsfw") != null;
+
             /*Users u = new Users();
             
             Cookie cookies[] = request.getCookies();
@@ -78,32 +77,32 @@ public class FileUpload extends HttpServlet {
             }
             
             u = dbc.UserId(username);
-            */
-            Article a = new Article();
-            Tags t = new Tags();
+             */
+            Cookie[] cookies = request.getCookies();
+            String username = "";
+
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals("auth")) {
+                        username = cookie.getValue();
+                    }
+                }
+
             
+            Users u = dbc.getUser(username);
+            
+            Article a = new Article();
             a.setArticle(imgSrc);
             a.setTitle(request.getParameter("title"));
             a.setNsfw(false);
             a.setHasMedia(true);
-            //a.setSender(u);
-            t.setTag(request.getParameter("tags"));
-
-            //a.setUploadDate(uploadDate);
+            a.setSender(u);
             
             dbc.insertArticle(a);
-            //dbc.insertTags(t);
             response.setHeader("Refresh", "0; URL=" + request.getContextPath());
-            
-            
-            
-        
+
         }
-        
+
     }
-    
-    
-    
 
     /**
      * Returns a short description of the servlet.

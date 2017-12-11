@@ -58,10 +58,6 @@ public class DbController {
     
     
     
-    public int getUser(String username) {
-        int usr = em.createNamedQuery("Users.findByUsername").setParameter("username", username).getResultList().indexOf(1);
-        return usr;
-    }
     
     public String UserId(String username) {
         List<Users> lst = em.createNamedQuery("Users.findByUsername").setParameter("username", username).getResultList();
@@ -99,6 +95,16 @@ public class DbController {
         em.persist(t);
         return t;
     }
+    
+    public String getCookie(@CookieParam("auth") String username){
+        return username;
+    }
+    
+    public Users getUser(String username) {
+        Users usr = (Users)em.createNamedQuery("Users.findByUsername").setParameter("username", username).getSingleResult();
+        return usr;
+    }
+    
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
