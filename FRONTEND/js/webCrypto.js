@@ -1,6 +1,12 @@
 'use strict';
 /*jshint esversion: 6 */
 
+/*
+    This is the "complete" code 
+    to hash the users password
+    Shame it doesn't work.
+*/
+
 const convertStringToArrayBufferView = (str) => {
     let bytes = new Uint8Array(str.length);
     for (let iii = 0; iii < str.length; iii++) {
@@ -47,7 +53,7 @@ form.addEventListener('submit', function (ev) {
         }, convertStringToArrayBufferView(passwd));
 
         promise.then(function (result) {
-            
+
             const hash_value = convertArrayBufferToHexaDecimal(result);
 
             let oData = new FormData();
@@ -69,7 +75,7 @@ form.addEventListener('submit', function (ev) {
 
             oReq.open('post', 'http://10.114.34.142:8080/BreakServer/webresources/service/users');
             oReq.send(oData);
-            
+
             ev.preventDefault();
         });
     } else {
