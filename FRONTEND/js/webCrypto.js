@@ -32,7 +32,11 @@ const convertArrayBufferToHexaDecimal =(buffer)=>
 };
 
 
-const hashPass =(pass)=>{
+const passField = document.querySelector('#submit');
+
+const hashPass =()=>{
+	
+	let pass = 
 const crypto = window.crypto || window.msCrypto;
 
 if(crypto.subtle)
@@ -50,4 +54,7 @@ else
     alert("Cryptography API not Supported");
 }
 };
+
+const submit = document.querySelector('#submit');
+submit.addEventListener('click', hashPass());
 

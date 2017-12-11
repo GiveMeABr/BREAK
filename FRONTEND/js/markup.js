@@ -4,6 +4,7 @@
 let article = {
 	ID: "",
 	user: "",
+	profilePic: "",
 	title: "",
 	article: "",
 	hasMedia: ""
@@ -24,11 +25,20 @@ const markupFeed = (jsonServlet) => {
 
 			for (var i = 0; i < json.length; i++) {
 
+				/*
 				article.ID = json[i].ID;
 				article.user = json[i].user;
 				article.title = json[i].title;
 				article.article = json[i].article;
 				article.hasMedia = json[i].hasMedia;
+				*/
+				
+				article.ID = json[i][0];
+				article.user = json[i][1];
+				article.profilePic = json[i][2];
+				article.title = json[i][3];
+				article.article = json[i][4];
+				article.hasMedia = json[i][5];
 
 				console.log(article);
 				console.log(article.hasMedia);
@@ -40,7 +50,7 @@ const markupFeed = (jsonServlet) => {
       <header>
 		<div class="profile_border">
 			<div class="cropper">
-				<img src="${article.user}" class="profile">
+				<img src="${article.profilePic}" class="profile">
 			</div>
 		</div>        
 		<h1>${article.title}</h1>
@@ -61,7 +71,7 @@ const markupFeed = (jsonServlet) => {
       <header>
 		<div class="profile_border">
 			<div class="cropper">
-				<img src="${article.user}" class="profile">
+				<img src="${article.profilePic}" class="profile">
 			</div>
 		</div>
 		<h1>${article.title}</h1>
