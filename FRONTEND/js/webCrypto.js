@@ -58,13 +58,13 @@ form.addEventListener('submit', function(ev){
     
     let hash = hashPass(passField.value);
     let oData = new FormData(form);
-    // oData.delete("password");
+    oData.delete("password");
     oData.append("password", hash);
     console.log("FormData: " + oData);
     
     let oReq = new XMLHttpRequest();
     
-    oReq.open('POST' ,'http://10.114.34.142:8080/BreakServer/webresources/service/users');
+    // oReq.open('POST' ,'http://10.114.34.142:8080/BreakServer/webresources/service/users');
     oReq.send(oData);
     ev.preventDefault();
 });
