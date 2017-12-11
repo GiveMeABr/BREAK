@@ -32,8 +32,8 @@ console.log(form);
 
 form.addEventListener('submit', function(ev){
     
-    const hashPass = (pass) => {
-
+    let passwd = passField.value;
+    
 	let crypto = window.crypto || window.msCrypto;
 
 	if (crypto.subtle) {
@@ -41,29 +41,20 @@ form.addEventListener('submit', function(ev){
 
 		const promise = crypto.subtle.digest({
 			name: "SHA-256"
-		}, convertStringToArrayBufferView(pass));
+		}, convertStringToArrayBufferView(passwd));
 
 		promise.then(function (result) {
 			const hash_value = convertArrayBufferToHexaDecimal(result);
 			console.log("hash: " + hash_value);
-			return hash_value;
-		});
-	} else {
-		alert("Cryptography API not Supported");
-	}
-};
-    
-    console.log("halooo");
-    
-    let hash = hashPass(passField.value);
+                
     let oData = new FormData();
-    console.log("HASH HERE TOO: " + hash);
+    console.log("HASH HERE TOO: " + hash_value);
     // oData.delete("password");
     const userField = document.querySelector('#username');
     const emailField = document.querySelector('#email');
     const profileField = document.querySelector('#profilepic');
     
-    oData.append("password", hash);
+    oData.append("password", hash_value);
     oData.append("username", userField.value);
     oData.append("email", emailField.value);
     oData.append("profilepic", profileField.files[0]);
@@ -74,6 +65,13 @@ form.addEventListener('submit', function(ev){
     oReq.open('POST' ,'http://10.114.34.142:8080/BreakServer/webresources/service/users');
     oReq.send(oData);
     ev.preventDefault();
+		});
+	} else {
+		alert("Cryptography API not Supported");
+	}
+
+    
+
 });
 
 console.log("end");
