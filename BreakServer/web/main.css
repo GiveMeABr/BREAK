@@ -213,7 +213,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 0px 20px 20px 20px;
 }
 .fp-articles {
@@ -464,7 +464,6 @@ button > img {
     top: 0;
     background-color: #1A1A1A;
     overflow-x: hidden;
-    overflow-y: scroll;
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
@@ -474,7 +473,6 @@ button > img {
 /* Position the content inside the overlay */
 .overlay-content {
     height: 10000px;
-    overflow-y: scroll;
     position: flex;
     justify-content: flex-start;
     top: 25%; /* 25% from the top */
@@ -579,6 +577,7 @@ button > img {
 /* UPLOAD PAGE */
 
 .upload {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -628,9 +627,6 @@ textarea {
 @media screen and (max-height: 900px) {
 .overlay h1 {
     font-size: 1em;
-}
-#upload-header {
-    display: none;
 }
 
 .overlay-content textarea {
