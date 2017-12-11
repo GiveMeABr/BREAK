@@ -63,9 +63,10 @@ public class DbController {
         return usr;
     }
     
-    public Users UserId(String username) {
-        Users u = getUserId(username).get(1);
-        return u;
+    public String UserId(String username) {
+        List<Users> lst = em.createNamedQuery("Users.findByUsername").setParameter("username", username).getResultList();
+        String json = new Gson().toJson(lst);
+        return json;
     }
     
     

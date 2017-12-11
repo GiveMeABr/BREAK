@@ -76,6 +76,15 @@ public class DbService {
         return dbc.getUser(username);
  
     }
+    
+    
+    @GET
+    @Path("testings")
+    public String jee() {
+        String username = "Eero";
+        return dbc.UserId(username);
+ 
+    }
 
     
 

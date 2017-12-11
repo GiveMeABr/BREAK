@@ -30,7 +30,7 @@ const cookie = () => {
 		ownUserName.innerHTML = username;
 	} else {
 		alert("Session expired, please re-login");
-		window.location.replace("index.html");
+		window.location.replace("login.html");
 	}
 };
  window.onload = cookie();
