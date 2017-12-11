@@ -44,7 +44,7 @@ const hashPass = () => {
 
 		promise.then(function (result) {
 			const hash_value = convertArrayBufferToHexaDecimal(result);
-			console.log("hash: " + hash_value)
+			console.log("hash: " + hash_value);
 			passField.value = hash_value;
 		});
 	} else {
