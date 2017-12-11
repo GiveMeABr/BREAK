@@ -68,6 +68,13 @@ public class DbService {
         return dbc.getMediaJson();
  
     }
+    
+    @GET
+    @Path("getPaskaEsimerkki")
+    public String Paskaesimerkki() {
+        return dbc.getMediaJson();
+ 
+    }
 
     
 
