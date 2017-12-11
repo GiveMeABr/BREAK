@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.servlet.http.Cookie;
 import javax.ws.rs.CookieParam;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.Produces;
@@ -71,21 +72,14 @@ public class DbService {
     }
     
     @GET
-    @Path("getUserName")
-    public int UserId(@CookieParam("auth") String username) {
-        return dbc.getUser(username);
- 
-    }
-    
-    
-    @GET
     @Path("testings")
-    public String jee() {
-        String username = "Eero";
-        return dbc.UserId(username);
- 
-    }
 
+    
+    public String jee(@CookieParam("auth") String username) {
+        
+        return dbc.UserId(username);
+    }
+    
     
 
     @POST

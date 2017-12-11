@@ -14,7 +14,8 @@ CREATE TABLE Article(
     FOREIGN KEY (Sender) REFERENCES Users(UserID),
     Title VARCHAR(60),
     Article VARCHAR(255),
-    NSFW BOOLEAN DEFAULT NULL 
+    NSFW BOOLEAN DEFAULT NULL,
+    hasMedia BOOLEAN
 );
 
 CREATE TABLE Tags(
@@ -28,7 +29,8 @@ CREATE TABLE Comments(
     Article INT,
     FOREIGN KEY (Commenter) REFERENCES Users(UserID),
     FOREIGN KEY (Article) REFERENCES Article(ArticleID),
-    CommentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    CommentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CommentID INT UNIQUE AUTO_INCREMENT PRIMARY KEY
 );
 
 CREATE TABLE Votes(
@@ -61,31 +63,4 @@ CREATE TABLE Follows(
     FOREIGN KEY (User) REFERENCES Users(UserID),
     FOREIGN KEY (User) REFERENCES Users(UserID),
     PRIMARY KEY (User, Followed)
-);
-
-INSERT INTO Users(
-    Username,
-    Email,
-    ModStatus,
-    UserSecretCode
-)
-VALUES(
-    'orgyfin',
-    'orgymail@giggel.com',
-    '1',
-    'imemuonaa'
-
-);
-
-INSERT INTO Article(
-    Sender,
-    Title,
-    Article,
-    NSFW
-)
-VALUES(
-    '3',
-    'HAUSKA KOIRAKUVA',
-    'www.kuva.orgy',
-    '0'
 );
