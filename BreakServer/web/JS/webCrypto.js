@@ -27,7 +27,12 @@ const convertArrayBufferToHexaDecimal = (buffer) => {
 
 const passField = document.querySelector('#password');
 
-const hashPass = (pass) => {
+const form = document.forms.namedItem("form");
+console.log(form);
+
+form.addEventListener('submit', function(ev){
+    
+    const hashPass = (pass) => {
 
 	let crypto = window.crypto || window.msCrypto;
 
@@ -47,12 +52,6 @@ const hashPass = (pass) => {
 		alert("Cryptography API not Supported");
 	}
 };
-
-
-const form = document.forms.namedItem("form");
-console.log(form);
-
-form.addEventListener('submit', function(ev){
     
     console.log("halooo");
     
