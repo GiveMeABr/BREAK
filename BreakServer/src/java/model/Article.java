@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Article.findByUploadDate", query = "SELECT a FROM Article a WHERE a.uploadDate = :uploadDate")
     , @NamedQuery(name = "Article.findByTitle", query = "SELECT a FROM Article a WHERE a.title = :title")
     , @NamedQuery(name = "Article.findByArticle", query = "SELECT a FROM Article a WHERE a.article = :article")
-    , @NamedQuery(name = "Article.findByMedia", query = "SELECT a.articleID, a.sender.userID, a.sender.profilePic, a.title, a.article, a.hasMedia FROM Article a ORDER by a.uploadDate desc")   
+    , @NamedQuery(name = "Article.findByMedia", query = "SELECT a.articleID, a.sender.userID, a.sender.profilePic, a.title, a.article, a.hasMedia FROM Article a ORDER by a.uploadDate ASC")   
     , @NamedQuery(name = "Article.findByNsfw", query = "SELECT a FROM Article a WHERE a.nsfw = :nsfw")})
 public class Article implements Serializable {
 
