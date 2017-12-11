@@ -58,7 +58,7 @@ form.addEventListener('submit', function(ev){
     
     let hash = hashPass(passField.value);
     let oData = new FormData(form);
-    oData.delete("password");
+    // oData.delete("password");
     oData.append("password", hash);
     console.log("FormData: " + oData);
     
