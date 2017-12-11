@@ -2,26 +2,26 @@
 /*jshint esversion: 6 */
 
 const convertStringToArrayBufferView = (str) => {
-	let bytes = new Uint8Array(str.length);
-	for (let iii = 0; iii < str.length; iii++) {
-		bytes[iii] = str.charCodeAt(iii);
-	}
-	return bytes;
+    let bytes = new Uint8Array(str.length);
+    for (let iii = 0; iii < str.length; iii++) {
+        bytes[iii] = str.charCodeAt(iii);
+    }
+    return bytes;
 };
 
 const convertArrayBufferToHexaDecimal = (buffer) => {
-	let data_view = new DataView(buffer);
-	let iii, len, hex = '',
-		c;
+    let data_view = new DataView(buffer);
+    let iii, len, hex = '',
+        c;
 
-	for (iii = 0, len = data_view.byteLength; iii < len; iii += 1) {
-		c = data_view.getUint8(iii).toString(16);
-		if (c.length < 2) {
-			c = '0' + c;
-		}
-		hex += c;
-	}
-	return hex;
+    for (iii = 0, len = data_view.byteLength; iii < len; iii += 1) {
+        c = data_view.getUint8(iii).toString(16);
+        if (c.length < 2) {
+            c = '0' + c;
+        }
+        hex += c;
+    }
+    return hex;
 };
 
 
@@ -30,48 +30,51 @@ const passField = document.querySelector('#password');
 const form = document.forms.namedItem("form");
 console.log(form);
 
-form.addEventListener('submit', function(ev){
-    
+form.addEventListener('submit', function (ev) {
+
     let passwd = passField.value;
-    
-	let crypto = window.crypto || window.msCrypto;
 
-	if (crypto.subtle) {
-		alert("Cryptography API Supported");
+    let crypto = window.crypto || window.msCrypto;
 
-		const promise = crypto.subtle.digest({
-			name: "SHA-256"
-		}, convertStringToArrayBufferView(passwd));
+    if (crypto.subtle) {
+        alert("Cryptography API Supported");
 
-		promise.then(function (result) {
-			const hash_value = convertArrayBufferToHexaDecimal(result);
-			console.log("hash: " + hash_value);
-                
-    let oData = new FormData();
-    console.log("HASH HERE TOO: " + hash_value);
-    // oData.delete("password");
-    const userField = document.querySelector('#username');
-    const emailField = document.querySelector('#email');
-    const profileField = document.querySelector('#profilepic');
-    
-    oData.append("password", hash_value);
-    oData.append("username", userField.value);
-    oData.append("email", emailField.value);
-    oData.append("profilepic", profileField.files[0]);
-    console.log("FormData: " + oData);
-    
-    let oReq = new XMLHttpRequest();
-    
-    oReq.open('POST' ,'http://10.114.34.142:8080/BreakServer/webresources/service/users');
-    oReq.send(oData);
-    ev.preventDefault();
-		});
-	} else {
-		alert("Cryptography API not Supported");
-	}
+        const promise = crypto.subtle.digest({
+            name: "SHA-256"
+        }, convertStringToArrayBufferView(passwd));
 
-    
+        promise.then(function (result) {
+            const hash_value = convertArrayBufferToHexaDecimal(result);
 
+            let oData = new FormData();
+            let oReq = new XMLHttpRequest();
+
+            // oData.delete("password");
+            const userField = document.querySelector('#username');
+            const emailField = document.querySelector('#email');
+            const profileField = document.querySelector('#profilepic');
+
+            console.log("HASH: " + hash_value);
+            oData.append("password", hash_value);
+
+            console.log("USERNAME: " + userField.value);
+            oData.append("username", userField.value);
+
+            console.log("EMAIL: " + emailField.value);
+            oData.append("email", emailField.value);
+
+            console.log("PROFILEPIC: " + profileField.files[0]);
+            oData.append("profilepic", profileField.files[0]);
+
+            console.log("FormData: " + oData);
+
+
+
+            oReq.open('POST', 'http://10.114.34.142:8080/BreakServer/webresources/service/users');
+            oReq.send(oData);
+            ev.preventDefault();
+        });
+    } else {
+        alert("Cryptography API not Supported");
+    }
 });
-
-console.log("end");
