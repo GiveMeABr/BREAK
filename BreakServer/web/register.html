@@ -16,14 +16,15 @@
     <source src="vid/805391652.mp4" type="video/mp4">
   </video>
   <img src="icons/logo_white.png" class="register-img">
-    <!--- method="post" --->
-  <form enctype="multipart/form-data" class="log-in" action="register" name="form">
+
+  <form enctype="multipart/form-data" class="log-in" method="post" action="register" name="form">
     <h1>Username</h1>
     <input id="username" class="text field" type="text" name="username" required>
     <!-- regex for username ^[a-z0-9_-]{3,20}$ -->
 	<h1>Email</h1>
     <input id="email" class="text field" type="email" name="email" required>
     <h1>Password</h1>
+      <p class="centered"> <strong>WARNING!</strong><br>Our passwords are not crypted in any way.<br>Please use something that you wouldn't use anywhere else. </p>
     <input class="text field" id="password" type="password" name="password" required>
     <!-- <h1>Password again</h1>
     <input class="text field" id="confirm_password" type="password" name="confirm_password" required> -->
@@ -33,6 +34,5 @@
     <a href="login.html">Already have an account?</a>
   </form>
 </div>
-<script type="text/javascript" src="js/webCrypto.js"></script>	
 </body>
 </html>

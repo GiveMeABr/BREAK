@@ -289,6 +289,9 @@ article h2 {
 .profile {
     width: 100%;
 }
+.centered {
+    text-align: center;
+}
 .profile-head {
     width: 100%;
     display: flex;
