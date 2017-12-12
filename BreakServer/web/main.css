@@ -70,8 +70,16 @@ form > a:hover {
     color: #fff;
     font-size: 1.1em;
 }
+#logOut {
+    width: 5em;
+    color: #666;
+    background-color: #222222;
+    border: none;
+    font-size: 1em ;
+}
 #logOut:hover {
     font-size: 1em ;
+    color: #fff;
 }
 form > h1 {
     font-size: 1.5em;
