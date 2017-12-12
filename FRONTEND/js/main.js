@@ -22,9 +22,8 @@ openUpload.addEventListener('click', openUploadi);
 closeUpload.addEventListener('click', closeUploadi);
 
 textUploadForm.addEventListener('submit', function (ev) {
-    window.location.replace("index.html");
+    textUploadForm.innerHTML = "Article posted!";
     ev.preventDefault();
-    return false;
 });
 
 
