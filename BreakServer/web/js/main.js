@@ -24,6 +24,7 @@ closeUpload.addEventListener('click', closeUploadi);
 textUploadForm.addEventListener('submit', function (ev) {
     window.location.replace("index.html");
     ev.preventDefault();
+    return false;
 });
 
 
