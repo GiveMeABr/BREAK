@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="nav_bar">
-    <nav id="primary"> <div><a href="#" id="own-username">KAKKAPERSE</a><form action="Logout" method ="post"><a id="logOut" href="login.html">Sign out</a></form></div> <a id="home-link" href="index.html"><img src="icons/logo_white.png" class="logo" alt="logo"></a> <a id="open_upload"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a></nav>
+    <nav id="primary"> <div><a href="#" id="own-username"></a><form action="logout" enctype="multipart/form-data" method ="post"><button type ="submit" id="logOut" >Sign out</button></form></div> <a id="home-link" href="index.html"><img src="icons/logo_white.png" class="logo" alt="logo"></a> <a id="open_upload"><em class="fa fa-plus" aria-hidden="true"></em></a> <a id="close_upload" href="#" class="closebtn display_none"><em class="fa fa-times" aria-hidden="true"></em></a></nav>
 </div>
     
 <main class="fp-articles"> 
@@ -37,10 +37,6 @@
         <input class="input-button" type="file" name="fileup" accept="image/*">
 		  <h1>Title</h1>
         <input class="text field" type="text" name="title">
-          
-          <!-- Damage control hidden tags field -->
-		  <h1 class="visibility_hidden">Tags</h1>
-        <input class="text field visibility_hidden" type="text" name="tags" placeholder="Separate tags with a comma">
           
 		  <input type="submit">
       </form>

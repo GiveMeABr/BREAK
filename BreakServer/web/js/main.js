@@ -21,10 +21,6 @@ const closeUploadi = () => {
 openUpload.addEventListener('click', openUploadi);
 closeUpload.addEventListener('click', closeUploadi);
 
-textUploadForm.addEventListener('submit', function (ev) {
-    textUploadForm.innerHTML = "Article posted!";
-
-});
 
 
 

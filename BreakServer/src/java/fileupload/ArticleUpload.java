@@ -1,13 +1,20 @@
-package loginpackage;
+package fileupload;
 
+import controller.DbController;
 import java.io.*;
+import javax.ejb.EJB;
 import javax.servlet.http.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
+import model.Article;
+import model.Users;
  
 
-    @WebServlet(name = "Logout", urlPatterns = {"/logout"})
-public class Logout extends HttpServlet {
+@WebServlet(name = "articleUpload", urlPatterns = {"/articleUpload"})
+public class ArticleUpload extends HttpServlet {
+    
+    @EJB
+    private DbController dbc;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -32,11 +39,21 @@ public class Logout extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            Cookie ck = new Cookie("auth", null);
-            ck.setHttpOnly(true);
-            ck.setMaxAge(1);
-            response.addCookie(ck);
-            response.sendRedirect("login.html");
+                        
+            String title = request.getParameter("title");
+            String article = request.getParameter("article");
+            
+            Users u = dbc.getUser("anon");
+            
+            Article a = new Article();
+            a.setTitle(title);
+            a.setArticle(article); 
+            a.setNsfw(false);
+            a.setHasMedia(false);
+            a.setSender(u);
+            
+            dbc.insertArticle(a);
+            response.setHeader("Refresh", "0; URL=" + request.getContextPath());
 
         }
     }

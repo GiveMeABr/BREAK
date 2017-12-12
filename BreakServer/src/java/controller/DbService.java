@@ -5,28 +5,18 @@
  */
 package controller;
 
-import com.google.gson.Gson;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.servlet.http.Cookie;
-import javax.ws.rs.CookieParam;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import model.Users;
 import model.Article;
 import model.Tags;
-import model.Votes;
 
 /**
  * REST Web Service
@@ -70,56 +60,6 @@ public class DbService {
         return dbc.getMediaJson();
  
     }
-    
-    @GET
-    @Path("testings")
-
-    
-    public String jee(@CookieParam("auth") String username) {
-        
-        return dbc.UserId(username);
-    }
-    
-    
-
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("users")
-    public Response post(
-            @FormParam("username") String username,
-            @FormParam("password") String password,
-            @FormParam("email") String email,
-            @FormParam("ModStatus") boolean ModStatus) {
-
-//____________________CHECK IF USERNAME IS TAKEN_____________________________________    
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://10.114.34.142:3306/break", "break", "breakdance");
-            java.sql.Statement stmt = con.createStatement();
-
-            String SQL = "SELECT * FROM break.Users WHERE Username='" + username + "'";
-
-            ResultSet rs = stmt.executeQuery(SQL);
-
-            if (rs.next()) {
-                System.out.println("Username taken!");
-
-            } else {
-                u.setUsername(username);
-            }
-
-        } catch (Exception e) {
-
-            System.out.println("Error : " + e.getMessage());
-        }
-//___________________________________________________________________________________    
-
-        u.setUserSecretCode(password);
-        u.setEmail(email);
-        u.setModStatus(ModStatus);
-        return Response.ok(dbc.insert(u)).cookie(new NewCookie("moi olen", "keksi")).build();
-
-    }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
@@ -128,8 +68,7 @@ public class DbService {
             @FormParam("title") String title,
             @FormParam("article") String article) {
         
-        Users us = dbc.getUser("Testikuljettaja");
-
+        Users us = dbc.getUser("anon");
         Article a = new Article();
         
         a.setSender(us);
@@ -137,9 +76,8 @@ public class DbService {
         a.setArticle(article);
         a.setNsfw(false);
         a.setHasMedia(false);
-        
+       
         return dbc.insertArticle(a);
-
     }
 
 }
