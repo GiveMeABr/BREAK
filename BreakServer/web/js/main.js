@@ -23,7 +23,7 @@ closeUpload.addEventListener('click', closeUploadi);
 
 textUploadForm.addEventListener('submit', function (ev) {
     textUploadForm.innerHTML = "Article posted!";
-    ev.preventDefault();
+
 });
 
 

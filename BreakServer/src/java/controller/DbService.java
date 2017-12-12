@@ -127,43 +127,19 @@ public class DbService {
     public Article postArticle(
             @FormParam("title") String title,
             @FormParam("article") String article) {
+        
+        Users us = dbc.getUser("Testikuljettaja");
 
         Article a = new Article();
-
+        
+        a.setSender(us);
         a.setTitle(title);
         a.setArticle(article);
         a.setNsfw(false);
         a.setHasMedia(false);
-        //a.setSender(???);
+        
         return dbc.insertArticle(a);
 
-    }
-
-    public Tags postTags(
-            @FormParam("tags") String tags) {
-
-        Tags t = new Tags();
-        t.setTag(tags);
-        return dbc.insertTags(t);
-    }
-
-    public String srcAddr;
-
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("upload")
-    public Article postArticleUpload(
-            @FormParam("title") String title,
-            @FormParam("nsfw") boolean nsfw) {
-
-        Article a = new Article();
-
-        a.setArticle(srcAddr);
-        a.setTitle(title);
-        //a.setUploadDate(date);
-        a.setNsfw(nsfw);
-        //a.setSender(???);
-        return dbc.insertArticle(a);
     }
 
 }
