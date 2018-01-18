@@ -1,9 +1,12 @@
 # BREAK
 This is the home of the most revolutionary and fresh social mediasharing service. It will BREAK the internet.
 
-## Getting Started
+## Login
+![Login animation](https://github.com/GiveMeABr/BREAK/blob/master/breakLogin.gif)
 
-Just go to the website and get started, once we have one.
+## Feed
+![Feed animation](https://github.com/GiveMeABr/BREAK/blob/master/ezgif.com-video-to-gif.gif)
+
 
 ## Authors
 **Mikael Ahlström**
