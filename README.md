@@ -9,6 +9,7 @@ This is the home of the most revolutionary and fresh social mediasharing service
 
 
 ## Authors
-**Mikael Ahlström**
-**Eero Karvonen**
-**Antti Nyman**
+[Mikael Ahlstrom](https://github.com/ahlstronomi)
+[Eero Karvonen](https://github.com/eerokar)
+[Eero Karvonen](https://github.com/anttinym)
+
