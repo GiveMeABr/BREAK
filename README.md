@@ -11,5 +11,5 @@ This is the home of the most revolutionary and fresh social mediasharing service
 ## Authors
 [Mikael Ahlstrom](https://github.com/ahlstronomi)
 [Eero Karvonen](https://github.com/eerokar)
-[Eero Karvonen](https://github.com/anttinym)
+[Antti Nyman](https://github.com/anttinym)
 
